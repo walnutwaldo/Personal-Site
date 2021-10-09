@@ -14,9 +14,17 @@ import InteractiveImage from "./components/InteractiveImage";
 
 const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
 
+const harvardLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FHarvard.png?alt=media&token=3703446f-670f-4899-a8c7-551246788b5f";
+const MITLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FMIT.png?alt=media&token=b1df02bd-213e-42ad-85e8-f3064488a748";
+const whartonLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FWharton.png?alt=media&token=6a19315e-af92-45ae-879f-8928c9b9a024";
+const IOILogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FIOI.png?alt=media&token=6ffc4e8d-604a-4fb6-a621-f14d80efb822";
+
+const logoUrls = [harvardLogoUrl, MITLogoUrl, whartonLogoUrl, IOILogoUrl];
+
 const heroLines = [
   "Passion for technology",
-  "Belief in people"
+  "Belief in people",
+  "Building lasting value"
 ]
 
 class App extends React.Component{
@@ -43,6 +51,10 @@ class App extends React.Component{
     }, 3000)
   }
 
+  openEmail() {
+    window.open('mailto:waldenyan20@gmail.com?subject=Subject&body=Hi%20Walden%2C', '_blank').focus();
+  }
+
   render(){
     const { heroLineIdx, fadeoutHero } = this.state;
     return (
@@ -63,7 +75,7 @@ class App extends React.Component{
               <Nav.Link href="#work">Work</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Button className="ms-2 rounded-pill primaryButton">
+              <Button className="ms-2 rounded-pill primaryButton" onClick={this.openEmail}>
                 Contact
               </Button>
             </Nav.Item>
@@ -73,7 +85,7 @@ class App extends React.Component{
         <div className="mainBody mt-3">
           <Container>
             <Row>
-              <Col>
+              <Col className="d-flex flex-column">
                 <h1 className={"mt-5" + (fadeoutHero ? " fadeout" : "")}>
                   <strong>
                     {heroLines[heroLineIdx]}
@@ -82,19 +94,14 @@ class App extends React.Component{
                 <p className="heroParagraph mt-3">
                   Hey! I'm <b>Walden</b>. I love building cool things with modern technology and working with teams of other ambitious people to tackle modern problems.
                 </p>
-                <Row className="mt-5">
-                  <Col>
-                    <Image src="https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FHarvard.png?alt=media&token=47a68ca5-2f7b-43ab-883f-0f5b6616369d"></Image>
-                  </Col>
-                  <Col>
-                    <Image src="https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FMIT.png?alt=media&token=c2e7130a-dce1-4d9e-9431-70ae6badc1e2"></Image>
-                  </Col>
-                  <Col>
-                    <Image src="https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FWharton.png?alt=media&token=d7a2bfdd-ec65-4b8d-bca8-7b52a3c55741"></Image>
-                  </Col>
-                  <Col>
-                    <Image src="https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FIOI.png?alt=media&token=dd9d23ab-85e5-488a-8add-240503da727e"></Image>
-                  </Col>
+                <Row className="mt-auto mb-auto">
+                  {logoUrls.map(function(logoUrl, i){
+                    return (
+                      <Col>
+                        <Image className="socialProofLogo" src={logoUrl}></Image>
+                      </Col>
+                    )
+                  })}
                 </Row>
               </Col>
               <Col>

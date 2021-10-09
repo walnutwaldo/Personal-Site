@@ -33,3 +33,15 @@ h1.fadeout {
 .primaryButton {
 	background-color: var(--primary);
 }
+
+.socialProofLogo {
+	height: 100px;
+}
+
+.nav-item {
+	font-weight: 600;
+}
+
+.nav-item .btn {
+	font-weight: 600;
+}
