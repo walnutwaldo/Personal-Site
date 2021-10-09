@@ -1,0 +1,21 @@
+.interactiveImage {
+	background-color: var(--secondary);
+	margin: 10px;
+	border-radius: 12px;
+	transition: 0.2s;
+}
+
+.interactiveImage.active {
+	transform: translate(-10px, 10px);
+}
+
+.imageCardImage {
+	border-radius: 12px;
+	transition: 0.2s;
+}
+
+.interactiveImage.active .imageCardImage {
+	position: relative;
+	transform: translate(20px, -20px);
+	box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.2);
+}
