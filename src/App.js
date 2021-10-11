@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
@@ -98,7 +98,7 @@ class App extends React.Component{
             </Row>
             <Row className="cta1 mt-5">
               <Col className="d-flex flex-column text-center">
-                <h4>Interested in what I do?</h4>
+                <h5><strong>Interested in what I do?</strong></h5>
                 <div>
                   <Button className="align-right rounded-pill cta-button me-2" onClick={this.openEmail}>Get in Touch</Button>
                   <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-2"

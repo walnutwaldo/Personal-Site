@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'react-bootstrap/Image';
-import '../style/interactiveImage.css'
+import '../style/interactiveImage.scss'
 
 class InteractiveImage extends React.Component{
 
