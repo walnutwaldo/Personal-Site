@@ -11,15 +11,11 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 
 import InteractiveImage from "./components/InteractiveImage";
+import SocialProofSection from "./components/SocialProofSection"
 
 const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
 
-const harvardLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FHarvard.png?alt=media&token=3703446f-670f-4899-a8c7-551246788b5f";
-const MITLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FMIT.png?alt=media&token=b1df02bd-213e-42ad-85e8-f3064488a748";
-const whartonLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FWharton.png?alt=media&token=6a19315e-af92-45ae-879f-8928c9b9a024";
-const IOILogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FIOI.png?alt=media&token=6ffc4e8d-604a-4fb6-a621-f14d80efb822";
-
-const logoUrls = [harvardLogoUrl, MITLogoUrl, whartonLogoUrl, IOILogoUrl];
+const resumeUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Yan%20Walden%20Resume.pdf?alt=media&token=2d2da9c0-57af-4aed-962c-b57d9e7dc0e0";
 
 const heroLines = [
   "Passion for technology",
@@ -75,16 +71,16 @@ class App extends React.Component{
               <Nav.Link href="#work">Work</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Button className="ms-2 rounded-pill primaryButton" onClick={this.openEmail}>
+              <Button className="ms-2 rounded-pill" onClick={this.openEmail}>
                 Contact
               </Button>
             </Nav.Item>
             </Nav>
           </Container>
         </Navbar>
-        <div className="mainBody mt-3">
+        <div className="mainBody">
           <Container>
-            <Row>
+            <Row className="heroSection mt-3">
               <Col className="d-flex flex-column">
                 <h1 className={"mt-5" + (fadeoutHero ? " fadeout" : "")}>
                   <strong>
@@ -94,18 +90,21 @@ class App extends React.Component{
                 <p className="heroParagraph mt-3">
                   Hey! I'm <b>Walden</b>. I love building cool things with modern technology and working with teams of other ambitious people to tackle modern problems.
                 </p>
-                <Row className="mt-auto mb-auto">
-                  {logoUrls.map(function(logoUrl, i){
-                    return (
-                      <Col>
-                        <Image className="socialProofLogo" src={logoUrl}></Image>
-                      </Col>
-                    )
-                  })}
-                </Row>
+                <SocialProofSection/>
               </Col>
               <Col>
                 <InteractiveImage src={heroUrl}/>
+              </Col>
+            </Row>
+            <Row className="cta1 mt-5">
+              <Col className="d-flex flex-column text-center">
+                <h4>Interested in what I do?</h4>
+                <div>
+                  <Button className="align-right rounded-pill cta-button me-2" onClick={this.openEmail}>Get in Touch</Button>
+                  <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-2"
+                  onClick={()=>window.open(resumeUrl, "_blank")}>
+                  Download Resume</Button>
+                </div>
               </Col>
             </Row>
           </Container>

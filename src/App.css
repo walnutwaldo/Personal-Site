@@ -30,18 +30,19 @@ h1.fadeout {
 	opacity: 0;
 }
 
-.primaryButton {
-	background-color: var(--primary);
-}
+/*.nav-item {
+	font-weight: 600;
+}*/
 
-.socialProofLogo {
-	height: 100px;
-}
-
-.nav-item {
+.nav-item .btn {
 	font-weight: 600;
 }
 
-.nav-item .btn {
+/*
+CALL TO ACTION SECTION
+*/
+
+Button.cta-button {
+	width: 200px;
 	font-weight: 600;
 }
