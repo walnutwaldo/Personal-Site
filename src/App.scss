@@ -46,3 +46,12 @@ Button.cta-button {
 	width: 200px;
 	font-weight: 600;
 }
+
+.socialLogo {
+	transition: 0.2s;
+	filter: brightness(100%);
+
+	:hover {
+		filter: brightness(0%);
+	};
+}

@@ -16,6 +16,11 @@ import SocialProofSection from "./components/SocialProofSection"
 const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
 
 const resumeUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Yan%20Walden%20Resume.pdf?alt=media&token=2d2da9c0-57af-4aed-962c-b57d9e7dc0e0";
+const linkedInUrl = "https://www.linkedin.com/in/waldenyan";
+const githubUrl = "https://github.com/walnutwaldo";
+
+const linkedInSocialLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Logos%2Flinkedin.svg?alt=media&token=af11f90e-536a-469b-bb3d-2b08a7b6c7f7";
+const githubSocialLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Logos%2Fgithub.svg?alt=media&token=3947cfcb-b8dc-41b2-9eac-22347485e896"
 
 const heroLines = [
   "Passion for technology",
@@ -60,21 +65,29 @@ class App extends React.Component{
             <Navbar.Brand className="font1" id="nameText">
               <strong>Walden Yan</strong>
             </Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Item>
+                <Nav.Link href={linkedInUrl} target="_blank">LinkedIn</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href={githubUrl} target="_blank">GitHub</Nav.Link>
+              </Nav.Item>
+            </Nav>
             <Nav>
-            <Nav.Item>
-              <Nav.Link href="#">Overview</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#skills">Skills</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="#work">Work</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Button className="ms-2 rounded-pill" onClick={this.openEmail}>
-                Contact
-              </Button>
-            </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#">Overview</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#skills">Skills</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#work">Work</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Button className="ms-2 rounded-pill" onClick={this.openEmail}>
+                  Contact
+                </Button>
+              </Nav.Item>
             </Nav>
           </Container>
         </Navbar>
@@ -100,10 +113,14 @@ class App extends React.Component{
               <Col className="d-flex flex-column text-center">
                 <h5><strong>Interested in what I do?</strong></h5>
                 <div>
-                  <Button className="align-right rounded-pill cta-button me-2" onClick={this.openEmail}>Get in Touch</Button>
-                  <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-2"
+                  <Button className="align-right rounded-pill cta-button me-1" onClick={this.openEmail}>Get in Touch</Button>
+                  <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-1"
                   onClick={()=>window.open(resumeUrl, "_blank")}>
                   Download Resume</Button>
+                </div>
+                <div className="mt-2">
+                  <a href={linkedInUrl} target="_blank" className="me-1 socialLogo"><Image src={linkedInSocialLogoUrl} width="38px"></Image></a>
+                  <a href={githubUrl} target="_blank" className="ms-1 socialLogo"><Image src={githubSocialLogoUrl} width="38px"></Image></a>
                 </div>
               </Col>
             </Row>
