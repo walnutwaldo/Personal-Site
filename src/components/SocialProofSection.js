@@ -6,8 +6,6 @@ import Popover from 'react-bootstrap/Popover';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Image from 'react-bootstrap/Image';
 
-import "../style/socialProofSection.scss"
-
 const harvardLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FHarvard.png?alt=media&token=3703446f-670f-4899-a8c7-551246788b5f";
 const MITLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FMIT.png?alt=media&token=d3386d1d-8f96-4d8f-80f9-a6e062ab837a";
 const whartonLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Proof%2FWharton.png?alt=media&token=6a19315e-af92-45ae-879f-8928c9b9a024";

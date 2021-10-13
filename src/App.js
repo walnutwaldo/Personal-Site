@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.scss';
 
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
@@ -31,7 +30,7 @@ const heroLines = [
 class App extends React.Component{
 
   componentDidMount(){
-    document.title = "Walden Yan (WIP)"
+    document.title = "Walden Yan"
   }
 
   constructor(props) {
