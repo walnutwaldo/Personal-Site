@@ -41,22 +41,24 @@ function openEmail() {
 
 function heroSection(heroLineIdx, fadeoutHero) {
   return (
-    <Row className="heroSection mt-3">
-      <Col className="d-flex flex-column">
-        <h1 className={"mt-5" + (fadeoutHero ? " fadeout" : "")}>
-          <strong>
-            {heroLines[heroLineIdx]}
-          </strong>
-        </h1>
-        <p className="heroParagraph mt-3">
-          Hey! I'm <b>Walden</b>. I love building cool things with modern technology and working with teams of other ambitious people to tackle modern problems.
-        </p>
-        <SocialProofSection/>
-      </Col>
-      <Col>
-        <InteractiveImage src={heroUrl}/>
-      </Col>
-    </Row>)
+    <section id="overview">
+      <Row className="heroSection mt-3">
+        <Col className="d-flex flex-column">
+          <h1 className={"mt-5" + (fadeoutHero ? " fadeout" : "")}>
+            <strong>
+              {heroLines[heroLineIdx]}
+            </strong>
+          </h1>
+          <p className="heroParagraph mt-3">
+            Hey! I'm <b>Walden</b>. I love building cool things with modern technology and working with teams of other ambitious people to tackle modern problems.
+          </p>
+          <SocialProofSection/>
+        </Col>
+        <Col>
+          <InteractiveImage src={heroUrl}/>
+        </Col>
+      </Row>
+    </section>)
 }
 
 function ctaSection1() {
@@ -91,7 +93,7 @@ function ctaSection2() {
 }
 
 function skillsSection() {
-  return (<>
+  return (<section id="skills">
     {SkillsData.skills.map((skill, i) => {
       let descriptionCol = (
         <Col className={"d-flex flex-column " + (i % 2 == 0 ? "me-5" : "ms-5")}>
@@ -122,26 +124,28 @@ function skillsSection() {
         </Row>
       )
     })}
-  </>)
+  </section>)
 }
 
 function featuredWorkSection() {
   return(
-    <Row className="mt-5 mb-5">
-      <h3 className="text-center mb-5">Highlighted Work</h3>
-      {WorkData.work.map((work, i) => {
-        return (<Col className="text-center">
-          <a href={work.linkUrl} target="_blank">
-            <Image src={work.imageUrl} className="highlightedWorkImage"></Image>
-          </a>
-          <div className="mt-3">
-            <h5><strong>{work.title}</strong></h5>
-            <p>{work.description}<br/>
-            <a href={work.linkUrl} target="_blank" style={{textDecoration: "none"}} className="workLinkText">{work.linkText}</a></p>
-          </div>
-        </Col>)
-      })}
-    </Row>)
+    <section id="work">
+      <Row className="mt-5 mb-5">
+        <h3 className="text-center mb-5">Highlighted Work</h3>
+        {WorkData.work.map((work, i) => {
+          return (<Col className="text-center">
+            <a href={work.linkUrl} target="_blank">
+              <Image src={work.imageUrl} className="highlightedWorkImage"></Image>
+            </a>
+            <div className="mt-3">
+              <h5><strong>{work.title}</strong></h5>
+              <p>{work.description}<br/>
+              <a href={work.linkUrl} target="_blank" style={{textDecoration: "none"}} className="workLinkText">{work.linkText}</a></p>
+            </div>
+          </Col>)
+        })}
+      </Row>
+    </section>)
 }
 
 function year() {
@@ -175,7 +179,7 @@ class App extends React.Component{
   render(){
     const { heroLineIdx, fadeoutHero } = this.state;
     return (
-      <>
+      <div>
         <Navbar className="color-nav" expand="lg" sticky="top" variant="light">
           <Container className="mainContainer">
             <Navbar.Brand className="font1" id="nameText">
@@ -191,7 +195,7 @@ class App extends React.Component{
             </Nav>
             <Nav>
               <Nav.Item>
-                <Nav.Link href="#">Overview</Nav.Link>
+                <Nav.Link href="#overview">Overview</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link href="#skills">Skills</Nav.Link>
@@ -211,7 +215,6 @@ class App extends React.Component{
           <Container>
             {heroSection(heroLineIdx, fadeoutHero)}
             {ctaSection1()}
-            <br/>
             {skillsSection()}
             {featuredWorkSection()}
             <br/>
@@ -232,7 +235,7 @@ class App extends React.Component{
             </Row>
           </Container>
         </div>
-      </>
+      </div>
     );
   }
 }

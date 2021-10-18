@@ -10490,6 +10490,10 @@ h1.fadeout, .fadeout.h1 {
   opacity: 0;
 }
 
+section {
+  padding-top: 50px;
+}
+
 /*.nav-item {
 	font-weight: 600;
 }*/
