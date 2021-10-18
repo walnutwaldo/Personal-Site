@@ -14,6 +14,9 @@ import InteractiveImage from "./components/InteractiveImage";
 import SocialProofSection from "./components/SocialProofSection"
 
 import SkillsData from "./data/skills";
+import WorkData from "./data/work";
+
+console.log(WorkData)
 
 const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
 
@@ -113,7 +116,19 @@ function skillsSection() {
 function featuredWorkSection() {
   return(
     <Row className="mt-5">
-      <h3 className="text-center">Highlighted Work</h3>
+      <h3 className="text-center mb-5">Highlighted Work</h3>
+      {WorkData.work.map((work, i) => {
+        return (<Col className="text-center">
+          <a href={work.linkUrl} target="_blank">
+            <Image src={work.imageUrl} className="highlightedWorkImage"></Image>
+          </a>
+          <div className="mt-3">
+            <h5><strong>{work.title}</strong></h5>
+            <p>{work.description}<br/>
+            <a href={work.linkUrl} target="_blank" style={{textDecoration: "none"}} className="workLinkText">{work.linkText}</a></p>
+          </div>
+        </Col>)
+      })}
     </Row>)
 }
 
