@@ -10441,6 +10441,8 @@ code {
   border-radius: 12px;
   transition: 0.2s;
   transform: translate(10px, -10px);
+  width: 100%;
+  height: 100%;
 }
 
 .interactiveImage.active .imageCardImage {
@@ -10468,12 +10470,14 @@ Container {
 }
 
 p {
-  font-weight: 600;
-  color: var(--medium-gray);
+  font-weight: 400;
+  color: black;
 }
 
 .heroParagraph {
+  font-weight: 600;
   font-size: 1.25rem;
+  color: var(--medium-gray);
 }
 
 h1, .h1 {
@@ -10488,6 +10492,11 @@ h1.fadeout, .fadeout.h1 {
 /*.nav-item {
 	font-weight: 600;
 }*/
+.color-nav {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
 .nav-item .btn {
   font-weight: 600;
 }
@@ -10506,6 +10515,23 @@ Button.cta-button {
 }
 .socialLogo :hover {
   filter: brightness(0%);
+}
+
+/*
+SKILLS
+*/
+.notableWork {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--medium-gray);
+}
+
+/*
+HIGHLIGHTED WORK
+*/
+h3, .h3 {
+  font-weight: 700;
+  font-size: 1.4rem;
 }
 
 /*# sourceMappingURL=index.css.map */
