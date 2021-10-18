@@ -8,13 +8,16 @@ Container {
   font-family: 'Abhaya Libre', serif;
 }
 
-#nameText {
+.fontLarge {
   font-size: 2rem;
+}
+
+.fontLargest {
+	font-size: 3.5rem;
 }
 
 p {
 	font-weight: 400;
-	color: black;
 }
 
 .heroParagraph {
@@ -34,6 +37,18 @@ h1.fadeout {
 
 section {
 	padding-top: 50px;
+}
+
+.scrollStart {
+	scroll-snap-align: start;
+}
+
+.navbar {
+	transition: 0.5s;
+
+	&.hidden {
+		opacity: 0;
+	}
 }
 
 /*.nav-item {
@@ -77,6 +92,13 @@ SKILLS
 	color: var(--medium-gray);
 }
 
+.list-group-item {
+	transition: 0.2s;
+	&:hover {
+		padding-left: 40px;
+	};
+}
+
 /*
 HIGHLIGHTED WORK
 */
@@ -110,4 +132,33 @@ FOOTER
 .footer {
 	background-color: var(--light-gray);
 	font-size: 0.9rem;
+}
+
+/*
+SPLASH
+*/
+
+#splash {
+	scroll-snap-align: start;
+
+	width: 100vw;
+	height: 100vh;
+	color: white;
+
+	position: relative;
+	overflow: hidden;
+
+	div {
+		width: 100%;
+		height: 100%;
+	}
+
+	img {
+		position: absolute;
+		object-fit: cover;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
 }

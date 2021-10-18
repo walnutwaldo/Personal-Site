@@ -16,8 +16,7 @@ import SocialProofSection from "./components/SocialProofSection"
 import SkillsData from "./data/skills";
 import WorkData from "./data/work";
 
-console.log(WorkData)
-
+const splashImageUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FSplash.png?alt=media&token=cc9d9001-feef-4af4-b661-d828cde7002d";
 const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
 
 const softwareEngineeringUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FMIT%20Dome.png?alt=media&token=136637ab-a5b7-466c-92e3-81b59b1e09b8";
@@ -148,6 +147,20 @@ function featuredWorkSection() {
     </section>)
 }
 
+function splashSection(scrollPosition) {
+  return (
+    <div id="splash">
+      <div className="text-center d-table">
+        <div className="d-table-cell align-middle">
+          <span className="fontLarge">Hello, I'm</span>
+          <br/>
+          <span className="fontLargest font1">Walden Yan</span>
+        </div>
+      </div>
+      <Image src={splashImageUrl} style={{top: (scrollPosition / 2) + "px"}}></Image>
+    </div>)
+}
+
 function year() {
   return new Date().getFullYear();
 }
@@ -162,7 +175,9 @@ class App extends React.Component{
     super(props)
     this.state = {
       heroLineIdx: 0,
-      fadeoutHero: false
+      fadeoutHero: false,
+      scrollPosition: 0,
+      exitedSplash: false
     }
 
     setInterval(() => {
@@ -176,13 +191,33 @@ class App extends React.Component{
     }, 3000)
   }
 
+  listenToScroll(event) {
+    const target = event.target;
+    const scroll = target.scrollTop;
+
+    console.log(scroll);
+
+    const intViewportHeight = window.innerHeight;
+    if (scroll >= intViewportHeight) {
+      this.setState({
+        exitedSplash: true
+      })
+    }
+
+    this.setState({
+      scrollPosition: scroll
+    })
+  }
+
   render(){
-    const { heroLineIdx, fadeoutHero } = this.state;
+    const { heroLineIdx, fadeoutHero, scrollPosition, exitedSplash } = this.state;
     return (
-      <div>
-        <Navbar className="color-nav" expand="lg" sticky="top" variant="light">
+      <div id="scrollContainer" className={(exitedSplash ? "" : "snap-y-mandatory")} onScroll={this.listenToScroll.bind(this)}>
+        {exitedSplash? (<></>) : splashSection(scrollPosition)}
+        <div className="scrollStart"></div>
+        <Navbar className={"color-nav" + (exitedSplash ? "" : " hidden")} expand="lg" sticky="top" variant="light">
           <Container className="mainContainer">
-            <Navbar.Brand className="font1" id="nameText">
+            <Navbar.Brand className="font1 fontLarge">
               <strong>Walden Yan</strong>
             </Navbar.Brand>
             <Nav className="me-auto">
@@ -211,7 +246,7 @@ class App extends React.Component{
             </Nav>
           </Container>
         </Navbar>
-        <div className="mainBody">
+        <div id="mainBody">
           <Container>
             {heroSection(heroLineIdx, fadeoutHero)}
             {ctaSection1()}

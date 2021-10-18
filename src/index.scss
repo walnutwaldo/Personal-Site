@@ -13,11 +13,27 @@ $theme-colors: (
   --light-gray: #ddd;
 }
 
-body {
+html, body {
+  height: 100%;
+  overflow: hidden;
   margin: 0;
   font-family: 'Open Sans', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#scrollContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.snap-y-mandatory {
+  scroll-snap-type: y mandatory;
 }
 
 code {
