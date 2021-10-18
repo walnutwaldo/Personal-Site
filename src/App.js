@@ -78,6 +78,18 @@ function ctaSection1() {
     </Row>)
 }
 
+function ctaSection2() {
+  return (
+    <Row className="cta1 mt-3 mb-5">
+      <Col className="d-flex flex-column text-center">
+        <h5><strong>Want to help me add to this list?</strong></h5>
+        <div>
+          <Button className="align-right rounded-pill cta-button me-1" onClick={openEmail}>Get in Touch</Button>
+        </div>
+      </Col>
+    </Row>)
+}
+
 function skillsSection() {
   return (<>
     {SkillsData.skills.map((skill, i) => {
@@ -115,7 +127,7 @@ function skillsSection() {
 
 function featuredWorkSection() {
   return(
-    <Row className="mt-5">
+    <Row className="mt-5 mb-5">
       <h3 className="text-center mb-5">Highlighted Work</h3>
       {WorkData.work.map((work, i) => {
         return (<Col className="text-center">
@@ -130,6 +142,10 @@ function featuredWorkSection() {
         </Col>)
       })}
     </Row>)
+}
+
+function year() {
+  return new Date().getFullYear();
 }
 
 class App extends React.Component{
@@ -198,6 +214,22 @@ class App extends React.Component{
             <br/>
             {skillsSection()}
             {featuredWorkSection()}
+            <br/>
+            {ctaSection2()}
+          </Container>
+        </div>
+        <div className="footer pt-4 pb-4">
+          <Container>
+            <Row>
+              <Col className="align-middle d-flex flex-column">
+                <p className="my-auto"><strong>Copyright {year()}</strong></p>
+              </Col>
+              <Col className="text-center">
+                <a href={linkedInUrl} target="_blank" className="me-1 socialLogo"><Image src={linkedInSocialLogoUrl} width="38px"></Image></a>
+                <a href={githubUrl} target="_blank" className="ms-1 socialLogo"><Image src={githubSocialLogoUrl} width="38px"></Image></a>
+              </Col>
+              <Col className="text-end"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
+            </Row>
           </Container>
         </div>
       </>

@@ -10412,6 +10412,7 @@ textarea.form-control-lg {
   --primary: #3786E3;
   --secondary: #90CAFF;
   --medium-gray: #737373;
+  --light-gray: #ddd;
 }
 
 body {
@@ -10548,7 +10549,14 @@ h3, .h3 {
 .workLinkText {
   color: var(--primary);
   font-weight: 700;
-  text-decoration: none;
+}
+
+/*
+FOOTER
+*/
+.footer {
+  background-color: var(--light-gray);
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=index.css.map */
