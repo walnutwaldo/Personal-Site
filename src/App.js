@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -15,6 +13,8 @@ import SocialProofSection from "./components/SocialProofSection"
 
 import SkillsData from "./data/skills";
 import WorkData from "./data/work";
+
+import ChevronDown from "./res/chevron-down.js";
 
 const splashImageUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FSplash.png?alt=media&token=cc9d9001-feef-4af4-b661-d828cde7002d";
 const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
@@ -150,11 +150,19 @@ function featuredWorkSection() {
 function splashSection(scrollPosition) {
   return (
     <div id="splash">
-      <div className="text-center d-table">
+      <div className="text-center d-table splashText">
         <div className="d-table-cell align-middle">
           <span className="fontLarge">Hello, I'm</span>
           <br/>
           <span className="fontLargest font1">Walden Yan</span>
+          <br/>
+          <span className="continueChevron" style={{
+            opacity: 1 - Math.min(1, scrollPosition / window.innerHeight)
+          }} onClick={()=>{
+            document.getElementById('overview').scrollIntoView();
+          }}>
+            <ChevronDown/>
+          </span>
         </div>
       </div>
       <Image src={splashImageUrl} style={{top: (scrollPosition / 2) + "px"}}></Image>
@@ -195,9 +203,8 @@ class App extends React.Component{
     const target = event.target;
     const scroll = target.scrollTop;
 
-    console.log(scroll);
-
     const intViewportHeight = window.innerHeight;
+
     if (scroll >= intViewportHeight) {
       this.setState({
         exitedSplash: true
@@ -263,8 +270,8 @@ class App extends React.Component{
                 <p className="my-auto"><strong>Copyright {year()}</strong></p>
               </Col>
               <Col className="text-center">
-                <a href={linkedInUrl} target="_blank" className="me-1 socialLogo"><Image src={linkedInSocialLogoUrl} width="38px"></Image></a>
-                <a href={githubUrl} target="_blank" className="ms-1 socialLogo"><Image src={githubSocialLogoUrl} width="38px"></Image></a>
+                <a href={linkedInUrl} target="_blank" className="me-1 socialLogo darkTheme"><Image src={linkedInSocialLogoUrl} width="38px"></Image></a>
+                <a href={githubUrl} target="_blank" className="ms-1 socialLogo darkTheme"><Image src={githubSocialLogoUrl} width="38px"></Image></a>
               </Col>
               <Col className="text-end"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
             </Row>

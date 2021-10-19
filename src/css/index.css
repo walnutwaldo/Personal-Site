@@ -10413,6 +10413,7 @@ textarea.form-control-lg {
   --secondary: #90CAFF;
   --medium-gray: #737373;
   --light-gray: #ddd;
+  --dark-gray: #222;
 }
 
 html, body {
@@ -10518,7 +10519,7 @@ section {
 }
 
 .navbar {
-  transition: 0.5s;
+  transition: 1s;
 }
 .navbar.hidden {
   opacity: 0;
@@ -10548,7 +10549,10 @@ Button.cta-button {
   transition: 0.2s;
   filter: brightness(100%);
 }
-.socialLogo :hover {
+.socialLogo.darkTheme:hover {
+  filter: brightness(200%);
+}
+.socialLogo:not(.darkTheme):hover {
   filter: brightness(0%);
 }
 
@@ -10596,8 +10600,9 @@ h3, .h3 {
 FOOTER
 */
 .footer {
-  background-color: var(--light-gray);
+  background-color: var(--dark-gray);
   font-size: 0.9rem;
+  color: white;
 }
 
 /*
@@ -10611,7 +10616,7 @@ SPLASH
   position: relative;
   overflow: hidden;
 }
-#splash div {
+#splash .splashText {
   width: 100%;
   height: 100%;
 }
@@ -10622,6 +10627,18 @@ SPLASH
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+#splash .continueChevron {
+  transition: 0.2s;
+  position: absolute;
+  bottom: 30px;
+  z-index: 1;
+  transform: translate(-50%, 0);
+  pointer-events: all;
+}
+#splash .continueChevron:hover {
+  transform: translate(-50%, -5px);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */
