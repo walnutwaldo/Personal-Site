@@ -17,6 +17,7 @@ import WorkData from "./data/work";
 import ChevronDown from "./res/chevron-down.js";
 
 const splashImageUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FSplash.png?alt=media&token=cc9d9001-feef-4af4-b661-d828cde7002d";
+const splashImageLowResUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FSplashLowRes.png?alt=media&token=4050fb44-3824-45c1-a591-fa41643e2e17";
 const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
 
 const softwareEngineeringUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FMIT%20Dome.png?alt=media&token=136637ab-a5b7-466c-92e3-81b59b1e09b8";
@@ -165,6 +166,7 @@ function splashSection(scrollPosition) {
           </span>
         </div>
       </div>
+      <Image src={splashImageLowResUrl} style={{top: (scrollPosition / 2) + "px"}}></Image>
       <Image src={splashImageUrl} style={{top: (scrollPosition / 2) + "px"}}></Image>
     </div>)
 }
