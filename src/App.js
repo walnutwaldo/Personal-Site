@@ -47,7 +47,7 @@ function heroSection(heroLineIdx, fadeoutHero, urls) {
   return (
     <section id="overview">
       <Row className="heroSection mt-3">
-        <Col className="d-flex flex-column col-12 col-lg-6 text-center">
+        <Col className="d-flex flex-column col-12 col-lg-6 heroText">
           <h1 className={"mt-0 mt-md-5" + (fadeoutHero ? " fadeout" : "")}>
             <strong>
               {heroLines[heroLineIdx]}

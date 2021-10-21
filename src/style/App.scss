@@ -20,6 +20,15 @@ p {
 	font-weight: 400;
 }
 
+.heroText {
+	text-align: center;
+}
+@media (min-width: 992px) {
+	.heroText {
+		text-align: left;
+	}
+}
+
 .heroParagraph {
 	font-weight: 500;
 	font-size: 1.25rem;
