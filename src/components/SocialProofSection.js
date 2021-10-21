@@ -58,21 +58,21 @@ class SocialProofSection extends React.Component {
 	render() {
 		const { urls } = this.state;
 		return (
-			<div className="mt-auto mb-auto d-flex flex-row justify-content-between">
-			{socialProofs.map(function(socialProof, i){
-				const popover = (
-					<Popover id="popover-basic">
-						<Popover.Header as="h3">{socialProof.name}</Popover.Header>
-						<Popover.Body>
-							{socialProof.description}
-						</Popover.Body>
-					</Popover>
-					);
-				return (
-					<OverlayTrigger trigger="hover" placement="top" overlay={popover}>
-						<Image className="socialProofLogo d-block" src={urls[socialProof.name]}></Image>
-					</OverlayTrigger>
-				)
+			<div className="my-4 my-lg-auto d-flex flex-row justify-content-between">
+				{socialProofs.map(function(socialProof, i){
+					const popover = (
+						<Popover id="popover-basic">
+							<Popover.Header as="h3">{socialProof.name}</Popover.Header>
+							<Popover.Body>
+								{socialProof.description}
+							</Popover.Body>
+						</Popover>
+						);
+					return (
+						<OverlayTrigger trigger="hover" placement="top" overlay={popover}>
+							<Image className="socialProofLogo d-block" src={urls[socialProof.name]}></Image>
+						</OverlayTrigger>
+					)
 			})}
 			</div>
 			)

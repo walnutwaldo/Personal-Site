@@ -35,10 +35,10 @@ class FeaturedWorkSection extends React.Component {
 
 		return(
 	    <section id="work">
-	      <Row className="mt-5 mb-5">
+	      <Row className="mt-5 my-md-5">
 	        <h3 className="text-center mb-5">Highlighted Work</h3>
 	        {WorkData.work.map((work, i) => {
-	          return (<Col className="text-center">
+	          return (<Col className="text-center mb-4">
 	            <a href={work.linkUrl} target="_blank">
 	              <Image src={urls[work.title]} className="highlightedWorkImage"></Image>
 	            </a>

@@ -1,5 +1,6 @@
 .socialProofLogo {
 	height: 80px;
-	max-width: 120px;
+	max-width: calc(min(22%, 120px));
 	object-fit: contain;
+	flex-shrink: 0.1;
 }

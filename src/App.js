@@ -30,8 +30,6 @@ const paths = {
   githubSocialLogo: 'Social Logos/github.svg'
 }
 
-const resumeUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Yan%20Walden%20Resume.pdf?alt=media&token=2d2da9c0-57af-4aed-962c-b57d9e7dc0e0";
-
 const linkedInUrl = "https://www.linkedin.com/in/waldenyan";
 const githubUrl = "https://github.com/walnutwaldo";
 
@@ -49,8 +47,8 @@ function heroSection(heroLineIdx, fadeoutHero, urls) {
   return (
     <section id="overview">
       <Row className="heroSection mt-3">
-        <Col className="d-flex flex-column col-12 col-lg-6">
-          <h1 className={"mt-5" + (fadeoutHero ? " fadeout" : "")}>
+        <Col className="d-flex flex-column col-12 col-lg-6 text-center">
+          <h1 className={"mt-0 mt-md-5" + (fadeoutHero ? " fadeout" : "")}>
             <strong>
               {heroLines[heroLineIdx]}
             </strong>
@@ -60,20 +58,22 @@ function heroSection(heroLineIdx, fadeoutHero, urls) {
           </p>
           <SocialProofSection/>
         </Col>
-        <Col className="col-12 col-lg-6">
+        <Col className="d-none d-md-block d-lg-none col-1"></Col>
+        <Col className="col-12 col-md-10 col-lg-6">
           <InteractiveImage src={urls['heroImage']}/>
         </Col>
+        <Col className="d-none d-md-block d-lg-none col-1"></Col>
       </Row>
     </section>)
 }
 
 function ctaSection1(urls) {
   return (
-    <Row className="cta1 mt-5 mb-5">
+    <Row className="cta1 my-3 my-md-5">
       <Col className="d-flex flex-column text-center">
         <h5><strong>Interested in what I do?</strong></h5>
         <div>
-          <Button className="align-right rounded-pill cta-button me-1" onClick={openEmail}>Get in Touch</Button>
+          <Button className="align-right rounded-pill cta-button me-1 mb-2" onClick={openEmail}>Get in Touch</Button>
           <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-1"
           onClick={()=>window.open(urls['resume'], "_blank")}>
           Download Resume</Button>
@@ -119,6 +119,73 @@ function splashSection(scrollPosition, urls) {
       <Image src={urls['splashImageLowRes']} style={{top: (scrollPosition / 2) + "px"}}></Image>
       <Image src={urls['splashImage']} style={{top: (scrollPosition / 2) + "px"}}></Image>
     </div>)
+}
+
+function navbarToggle() {
+  return (
+    <Navbar.Toggle>
+      <div className="navbar-toggle-icon top-bar"></div>
+      <div className="navbar-toggle-icon bottom-bar"></div>
+      <div className="navbar-toggle-icon middle-bar"></div>
+    </Navbar.Toggle>
+  )
+}
+
+function navbar(exitedSplash) {
+  return (
+    <Navbar className={"color-nav" + (exitedSplash ? "" : " hidden")} expand="md" sticky="top" variant="light">
+      <Container className="mainContainer">
+        <Navbar.Brand className="font1 fontLarge">
+          <strong>Walden Yan</strong>
+        </Navbar.Brand>
+        <Nav className="me-auto d-none d-md-flex">
+          <Nav.Item>
+            <Nav.Link href={linkedInUrl} target="_blank">LinkedIn</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href={githubUrl} target="_blank">GitHub</Nav.Link>
+          </Nav.Item>
+        </Nav>
+        {navbarToggle()}
+        <Navbar.Collapse className="justify-content-end">
+          <Nav className="text-center">
+            <Nav.Item>
+              <Nav.Link href="#overview">Overview</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="#skills">Skills</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href="#work">Work</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Button className="ms-2 rounded-pill" onClick={openEmail}>
+                Contact
+              </Button>
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>)
+}
+
+function footer(urls) {
+  return (
+    <div className="footer py-2 py-md-4">
+      <Container>
+        <Row className="text-center">
+          <Col className="col-12 my-2 col-md-4 my-md-0 align-middle d-flex flex-column text-left">
+            <p className="my-auto"><strong>Copyright {year()}</strong></p>
+          </Col>
+          <Col className="col-12 my-2 col-md-4 my-md-0">
+            <a href={linkedInUrl} target="_blank" className="me-1 socialLogo darkTheme"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
+            <a href={githubUrl} target="_blank" className="ms-1 socialLogo darkTheme"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
+          </Col>
+          <Col className="col-12 my-2 col-md-4 my-md-0 text-end-md"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
+        </Row>
+      </Container>
+    </div>
+  )
 }
 
 function year() {
@@ -195,61 +262,17 @@ class App extends React.Component{
       <div id="scrollContainer" className={(exitedSplash ? "" : "snap-y-mandatory")} onScroll={this.listenToScroll.bind(this)}>
         {exitedSplash? (<></>) : splashSection(scrollPosition, urls)}
         <div className="scrollStart"></div>
-        <Navbar className={"color-nav" + (exitedSplash ? "" : " hidden")} expand="lg" sticky="top" variant="light">
-          <Container className="mainContainer">
-            <Navbar.Brand className="font1 fontLarge">
-              <strong>Walden Yan</strong>
-            </Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Item>
-                <Nav.Link href={linkedInUrl} target="_blank">LinkedIn</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href={githubUrl} target="_blank">GitHub</Nav.Link>
-              </Nav.Item>
-            </Nav>
-            <Nav>
-              <Nav.Item>
-                <Nav.Link href="#overview">Overview</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="#skills">Skills</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="#work">Work</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Button className="ms-2 rounded-pill" onClick={openEmail}>
-                  Contact
-                </Button>
-              </Nav.Item>
-            </Nav>
-          </Container>
-        </Navbar>
+        {navbar(exitedSplash)}
         <div id="mainBody">
           <Container>
             {heroSection(heroLineIdx, fadeoutHero, urls)}
             {ctaSection1(urls)}
             <SkillsSection/>
             <FeaturedWorkSection/>
-            <br/>
             {ctaSection2()}
           </Container>
         </div>
-        <div className="footer pt-4 pb-4">
-          <Container>
-            <Row>
-              <Col className="align-middle d-flex flex-column">
-                <p className="my-auto"><strong>Copyright {year()}</strong></p>
-              </Col>
-              <Col className="text-center">
-                <a href={linkedInUrl} target="_blank" className="me-1 socialLogo darkTheme"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
-                <a href={githubUrl} target="_blank" className="ms-1 socialLogo darkTheme"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
-              </Col>
-              <Col className="text-end"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
-            </Row>
-          </Container>
-        </div>
+        {footer(urls)}
       </div>
     );
   }

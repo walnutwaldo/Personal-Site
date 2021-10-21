@@ -21,7 +21,7 @@ p {
 }
 
 .heroParagraph {
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 1.25rem;
 	color: var(--medium-gray);
 }
@@ -33,10 +33,6 @@ h1 {
 
 h1.fadeout {
 	opacity: 0;
-}
-
-section {
-	padding-top: 50px;
 }
 
 .scrollStart {
@@ -51,9 +47,56 @@ section {
 	}
 }
 
-/*.nav-item {
-	font-weight: 600;
-}*/
+@media (max-width: 767px) {
+	.navbar-brand {
+		position: relative;
+	    transform: translate(calc(-50%), 0px);
+	    left: 50%;
+	}
+}
+
+.navbar-toggler {
+	outline: none !important;
+	border: none !important;
+	box-shadow: none !important;
+
+	.navbar-toggle-icon {
+		position: absolute;
+		width: 28px;
+		height: 2px;
+		background-color: var(--medium-gray);
+		transition: 0.2s;
+
+		&.middle-bar {
+			position: relative;
+		}
+	};
+
+	&:active .navbar-toggle-icon {
+		background-color: var(--dark-gray);
+	};
+
+	&.collapsed .navbar-toggle-icon {
+		&.top-bar {
+			transform: translate(0, -8px);
+		};
+		&.bottom-bar {
+			transform: translate(0, 8px);
+		};
+	};
+
+	&:not(.collapsed) .navbar-toggle-icon {
+		&.top-bar {
+			transform: rotate(-45deg);
+		};
+		&.middle-bar {
+			opacity: 0;
+		};
+		&.bottom-bar {
+			transform: rotate(45deg);
+		};
+	};
+}
 
 .color-nav {
 	background-color: rgba(255, 255, 255, 0.7);
