@@ -1,18 +1,18 @@
 {
 	"work": [{
-		"imageUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FMITPRIMESConference.png?alt=media&token=56e96012-bd0e-417a-94f1-811243625408",
+		"imagePath": "Photos/MITPRIMESConference.png",
 		"title": "MIT PRIMES Research",
 		"description": "Conducted research in cryptography and machine learning.",
 		"linkText": "Read Cryptography Paper",
 		"linkUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/SyFER.pdf?alt=media&token=81acaedc-d869-4a8e-a776-55ad39634bbf"
 	}, {
-		"imageUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FIOIArticlePhoto.png?alt=media&token=473969f0-dd4f-457e-a7b7-2ba2ed7b971d",
+		"imagePath": "Photos/IOIArticlePhoto.png",
 		"title": "IOI Gold",
 		"description": "Won a gold medal at the International Olympiad in Informatics for the USA",
 		"linkText": "Read More",
 		"linkUrl": "https://www.seas.harvard.edu/news/2020/10/coding-gold"
 	}, {
-		"imageUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FGameFiApp.png?alt=media&token=5ecba9eb-132e-47d5-a687-2d7b399b10a2",
+		"imagePath": "Photos/GameFiApp.png",
 		"title": "GameFi",
 		"description": "Co-Founder & CTO of fintech company. Raised funds and led engineering.",
 		"linkText": "Company Site",

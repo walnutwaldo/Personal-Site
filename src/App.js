@@ -1,33 +1,39 @@
 import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import ListGroup from 'react-bootstrap/ListGroup';
-
-import InteractiveImage from "./components/InteractiveImage";
-import SocialProofSection from "./components/SocialProofSection"
-
-import SkillsData from "./data/skills";
-import WorkData from "./data/work";
+import {
+  Container,
+  Navbar,
+  Nav,
+  Button,
+  Row,
+  Col,
+  Image
+} from 'react-bootstrap';
+import {
+  InteractiveImage,
+  SocialProofSection,
+  FeaturedWorkSection,
+  SkillsSection
+} from "./components";
 
 import ChevronDown from "./res/chevron-down.js";
 
-const splashImageUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FSplash.png?alt=media&token=cc9d9001-feef-4af4-b661-d828cde7002d";
-const splashImageLowResUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FSplashLowRes.png?alt=media&token=4050fb44-3824-45c1-a591-fa41643e2e17";
-const heroUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FHero.png?alt=media&token=5656698f-a8ae-4a57-976e-46ea9e230028";
+import getStorageUrl from './tools/firebase';
 
-const softwareEngineeringUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FMIT%20Dome.png?alt=media&token=136637ab-a5b7-466c-92e3-81b59b1e09b8";
+const useSquareSplash = window.innerWidth / window.innerHeight < 1;
+
+const paths = {
+  splashImage: `Photos/Splash${useSquareSplash ? 'Square' : ''}.png`,
+  splashImageLowRes: `Photos/Splash${useSquareSplash ? 'Square' : ''}.png`,
+  heroImage: 'Photos/Hero.png',
+  resume: 'Yan Walden Resume.pdf',
+  linkedInSocialLogo: 'Social Logos/linkedin.svg',
+  githubSocialLogo: 'Social Logos/github.svg'
+}
 
 const resumeUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Yan%20Walden%20Resume.pdf?alt=media&token=2d2da9c0-57af-4aed-962c-b57d9e7dc0e0";
+
 const linkedInUrl = "https://www.linkedin.com/in/waldenyan";
 const githubUrl = "https://github.com/walnutwaldo";
-
-const linkedInSocialLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Logos%2Flinkedin.svg?alt=media&token=af11f90e-536a-469b-bb3d-2b08a7b6c7f7";
-const githubSocialLogoUrl = "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Social%20Logos%2Fgithub.svg?alt=media&token=3947cfcb-b8dc-41b2-9eac-22347485e896"
 
 const heroLines = [
   "Passion for technology",
@@ -39,11 +45,11 @@ function openEmail() {
   window.open('mailto:waldenyan20@gmail.com?subject=Subject&body=Hi%20Walden%2C', '_blank').focus();
 }
 
-function heroSection(heroLineIdx, fadeoutHero) {
+function heroSection(heroLineIdx, fadeoutHero, urls) {
   return (
     <section id="overview">
       <Row className="heroSection mt-3">
-        <Col className="d-flex flex-column">
+        <Col className="d-flex flex-column col-12 col-lg-6">
           <h1 className={"mt-5" + (fadeoutHero ? " fadeout" : "")}>
             <strong>
               {heroLines[heroLineIdx]}
@@ -54,14 +60,14 @@ function heroSection(heroLineIdx, fadeoutHero) {
           </p>
           <SocialProofSection/>
         </Col>
-        <Col>
-          <InteractiveImage src={heroUrl}/>
+        <Col className="col-12 col-lg-6">
+          <InteractiveImage src={urls['heroImage']}/>
         </Col>
       </Row>
     </section>)
 }
 
-function ctaSection1() {
+function ctaSection1(urls) {
   return (
     <Row className="cta1 mt-5 mb-5">
       <Col className="d-flex flex-column text-center">
@@ -69,12 +75,12 @@ function ctaSection1() {
         <div>
           <Button className="align-right rounded-pill cta-button me-1" onClick={openEmail}>Get in Touch</Button>
           <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-1"
-          onClick={()=>window.open(resumeUrl, "_blank")}>
+          onClick={()=>window.open(urls['resume'], "_blank")}>
           Download Resume</Button>
         </div>
         <div className="mt-2">
-          <a href={linkedInUrl} target="_blank" className="me-1 socialLogo"><Image src={linkedInSocialLogoUrl} width="38px"></Image></a>
-          <a href={githubUrl} target="_blank" className="ms-1 socialLogo"><Image src={githubSocialLogoUrl} width="38px"></Image></a>
+          <a href={linkedInUrl} target="_blank" className="me-1 socialLogo"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
+          <a href={githubUrl} target="_blank" className="ms-1 socialLogo"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
         </div>
       </Col>
     </Row>)
@@ -92,63 +98,7 @@ function ctaSection2() {
     </Row>)
 }
 
-function skillsSection() {
-  return (<section id="skills">
-    {SkillsData.skills.map((skill, i) => {
-      let descriptionCol = (
-        <Col className={"d-flex flex-column " + (i % 2 == 0 ? "me-5" : "ms-5")}>
-          <h1 className="mt-3"><strong>{skill.title}</strong></h1>
-          <p>
-            {skill.description}
-          </p>
-          <h2 className="notableWork">Notable Work</h2>
-          <ListGroup variant="flush">
-            {skill.notableWork.map((work, j) => {
-              return <ListGroup.Item>{work}</ListGroup.Item>
-            })}
-          </ListGroup>
-        </Col>)
-
-      let imageCol = (
-        <Col>
-          <InteractiveImage src={skill.imageUrl}/>
-        </Col>)
-
-      return (
-        <Row className="skill mt-5">
-          {(i % 2 == 0 ? (
-            <>{descriptionCol}{imageCol}</>
-            ) : (
-            <>{imageCol}{descriptionCol}</>
-            ))}
-        </Row>
-      )
-    })}
-  </section>)
-}
-
-function featuredWorkSection() {
-  return(
-    <section id="work">
-      <Row className="mt-5 mb-5">
-        <h3 className="text-center mb-5">Highlighted Work</h3>
-        {WorkData.work.map((work, i) => {
-          return (<Col className="text-center">
-            <a href={work.linkUrl} target="_blank">
-              <Image src={work.imageUrl} className="highlightedWorkImage"></Image>
-            </a>
-            <div className="mt-3">
-              <h5><strong>{work.title}</strong></h5>
-              <p>{work.description}<br/>
-              <a href={work.linkUrl} target="_blank" style={{textDecoration: "none"}} className="workLinkText">{work.linkText}</a></p>
-            </div>
-          </Col>)
-        })}
-      </Row>
-    </section>)
-}
-
-function splashSection(scrollPosition) {
+function splashSection(scrollPosition, urls) {
   return (
     <div id="splash">
       <div className="text-center d-table splashText">
@@ -166,8 +116,8 @@ function splashSection(scrollPosition) {
           </span>
         </div>
       </div>
-      <Image src={splashImageLowResUrl} style={{top: (scrollPosition / 2) + "px"}}></Image>
-      <Image src={splashImageUrl} style={{top: (scrollPosition / 2) + "px"}}></Image>
+      <Image src={urls['splashImageLowRes']} style={{top: (scrollPosition / 2) + "px"}}></Image>
+      <Image src={urls['splashImage']} style={{top: (scrollPosition / 2) + "px"}}></Image>
     </div>)
 }
 
@@ -187,7 +137,8 @@ class App extends React.Component{
       heroLineIdx: 0,
       fadeoutHero: false,
       scrollPosition: 0,
-      exitedSplash: false
+      exitedSplash: false,
+      urls: {}
     }
 
     setInterval(() => {
@@ -198,7 +149,26 @@ class App extends React.Component{
         heroLineIdx: (this.state.heroLineIdx + 1) % heroLines.length,
         fadeoutHero: false
       }), 200)
-    }, 3000)
+    }, 3000);
+
+    this.loadUrls();
+  }
+
+  loadUrls() {
+    let proms = []
+    let urls = {}
+    for (const key in paths) {
+      proms.push(getStorageUrl(paths[key]).then((url) => {
+        urls[key] = url;
+      }).catch((err) => {
+        console.error('Failed to load path ' + paths[key]);
+      }))
+    }
+    Promise.allSettled(proms).then(() => {
+      this.setState({
+        urls: urls
+      })
+    });
   }
 
   listenToScroll(event) {
@@ -219,10 +189,11 @@ class App extends React.Component{
   }
 
   render(){
-    const { heroLineIdx, fadeoutHero, scrollPosition, exitedSplash } = this.state;
+    const { heroLineIdx, fadeoutHero, scrollPosition, exitedSplash, urls } = this.state;
+
     return (
       <div id="scrollContainer" className={(exitedSplash ? "" : "snap-y-mandatory")} onScroll={this.listenToScroll.bind(this)}>
-        {exitedSplash? (<></>) : splashSection(scrollPosition)}
+        {exitedSplash? (<></>) : splashSection(scrollPosition, urls)}
         <div className="scrollStart"></div>
         <Navbar className={"color-nav" + (exitedSplash ? "" : " hidden")} expand="lg" sticky="top" variant="light">
           <Container className="mainContainer">
@@ -257,10 +228,10 @@ class App extends React.Component{
         </Navbar>
         <div id="mainBody">
           <Container>
-            {heroSection(heroLineIdx, fadeoutHero)}
-            {ctaSection1()}
-            {skillsSection()}
-            {featuredWorkSection()}
+            {heroSection(heroLineIdx, fadeoutHero, urls)}
+            {ctaSection1(urls)}
+            <SkillsSection/>
+            <FeaturedWorkSection/>
             <br/>
             {ctaSection2()}
           </Container>
@@ -272,8 +243,8 @@ class App extends React.Component{
                 <p className="my-auto"><strong>Copyright {year()}</strong></p>
               </Col>
               <Col className="text-center">
-                <a href={linkedInUrl} target="_blank" className="me-1 socialLogo darkTheme"><Image src={linkedInSocialLogoUrl} width="38px"></Image></a>
-                <a href={githubUrl} target="_blank" className="ms-1 socialLogo darkTheme"><Image src={githubSocialLogoUrl} width="38px"></Image></a>
+                <a href={linkedInUrl} target="_blank" className="me-1 socialLogo darkTheme"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
+                <a href={githubUrl} target="_blank" className="ms-1 socialLogo darkTheme"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
               </Col>
               <Col className="text-end"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
             </Row>

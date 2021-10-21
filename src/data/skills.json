@@ -1,7 +1,7 @@
 {
 	"skills": [{
 		"title": "Software Engineering",
-		"imageUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FMIT%20Dome.png?alt=media&token=136637ab-a5b7-466c-92e3-81b59b1e09b8",
+		"imagePath": "Photos/MIT Dome.png",
 		"description": "I wrote my first line of code at the age of 12 while making a video game. I soon went on to study theoretical computer science and entered the world of competitive programming. In high school and college, I explored other applications of software from research to co-founding a startup. I have always valued clean code and scalable systems.",
 		"notableWork": [
 			"IOI Gold Medalist (Team USA)",
@@ -11,7 +11,7 @@
 		]
 	},{
 		"title": "Project Management",
-		"imageUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FPRIMESConferencePresentation.png?alt=media&token=bd647593-f36b-46eb-aaa4-eb4f008d8558",
+		"imagePath": "Photos/PRIMESConferencePresentation.png",
 		"description": "Though I love building technology systems, I have also grown to enjoy building \"people systems\". Coming from a technical background, leading people is something I learned over the years. But my strengths in delegating work, evaluating talent, and planning tight timelines has always proven useful in guiding a team around me.",
 		"notableWork": [
 			"Leading engineering & design @ GameFi",
@@ -21,7 +21,7 @@
 		]
 	},{
 		"title": "Finance & Investment",
-		"imageUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/Photos%2FGameFiWhiteSteps.JPG?alt=media&token=cde675bb-92ca-4ac0-8b6b-ae6219d2c143",
+		"imagePath": "Photos/GameFiWhiteSteps.JPG",
 		"description": "My interest in finance started with paper trading in high school. This became a hobby of real security trading & investment. I grew to enjoy analyzing company growth and opportunity, especially in tech. This interest soon expanded to venture capital and forming my own company during COVID-19 in the fast-growing space between financial tech and entertainment.",
 		"notableWork": [
 			"Founding and fundraising for GameFi",
