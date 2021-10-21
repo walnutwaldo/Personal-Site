@@ -45,9 +45,9 @@ function openEmail() {
 
 function heroSection(heroLineIdx, fadeoutHero, urls) {
   return (
-    <section id="overview">
+    <section name="overview" id="overview" className="pt-md-5">
       <Row className="heroSection mt-3">
-        <Col className="d-flex flex-column col-12 col-lg-6 heroText">
+        <Col className="d-flex flex-column col-12 col-lg-6 text-center text-lg-start">
           <h1 className={"mt-0 mt-md-5" + (fadeoutHero ? " fadeout" : "")}>
             <strong>
               {heroLines[heroLineIdx]}
@@ -99,6 +99,7 @@ function ctaSection2() {
 }
 
 function splashSection(scrollPosition, urls) {
+  const splashOffset = scrollPosition / 2;
   return (
     <div id="splash">
       <div className="text-center d-table splashText">
@@ -116,8 +117,8 @@ function splashSection(scrollPosition, urls) {
           </span>
         </div>
       </div>
-      <Image src={urls['splashImageLowRes']} style={{top: (scrollPosition / 2) + "px"}}></Image>
-      <Image src={urls['splashImage']} style={{top: (scrollPosition / 2) + "px"}}></Image>
+      <Image src={urls['splashImageLowRes']} style={{top: splashOffset + "px"}}></Image>
+      <Image src={urls['splashImage']} style={{top: splashOffset + "px"}}></Image>
     </div>)
 }
 
@@ -174,14 +175,14 @@ function footer(urls) {
     <div className="footer py-2 py-md-4">
       <Container>
         <Row className="text-center">
-          <Col className="col-12 my-2 col-md-4 my-md-0 align-middle d-flex flex-column text-left">
+          <Col className="col-12 my-2 col-md-4 my-md-0 align-middle d-flex flex-column text-md-start">
             <p className="my-auto"><strong>Copyright {year()}</strong></p>
           </Col>
           <Col className="col-12 my-2 col-md-4 my-md-0">
             <a href={linkedInUrl} target="_blank" className="me-1 socialLogo darkTheme"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
             <a href={githubUrl} target="_blank" className="ms-1 socialLogo darkTheme"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
           </Col>
-          <Col className="col-12 my-2 col-md-4 my-md-0 text-end-md"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
+          <Col className="col-12 my-2 col-md-4 my-md-0 text-md-end"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
         </Row>
       </Container>
     </div>
@@ -260,7 +261,7 @@ class App extends React.Component{
 
     return (
       <div id="scrollContainer" className={(exitedSplash ? "" : "snap-y-mandatory")} onScroll={this.listenToScroll.bind(this)}>
-        {exitedSplash? (<></>) : splashSection(scrollPosition, urls)}
+        {/*exitedSplash? (<></>) : */splashSection(scrollPosition, urls)}
         <div className="scrollStart"></div>
         {navbar(exitedSplash)}
         <div id="mainBody">

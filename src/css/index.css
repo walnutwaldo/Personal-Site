@@ -10433,6 +10433,7 @@ html, body {
   left: 0;
   right: 0;
   overflow: hidden auto;
+  height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -10495,15 +10496,6 @@ p {
   font-weight: 400;
 }
 
-.heroText {
-  text-align: center;
-}
-
-@media (min-width: 992px) {
-  .heroText {
-    text-align: left;
-  }
-}
 .heroParagraph {
   font-weight: 500;
   font-size: 1.25rem;
@@ -10654,7 +10646,7 @@ SPLASH
 #splash {
   scroll-snap-align: start;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   color: white;
   position: relative;
   overflow: hidden;

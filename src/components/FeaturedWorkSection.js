@@ -34,7 +34,7 @@ class FeaturedWorkSection extends React.Component {
 		const { urls } = this.state;
 
 		return(
-	    <section id="work">
+	    <section name="work" id="work" className="pt-md-5">
 	      <Row className="mt-5 my-md-5">
 	        <h3 className="text-center mb-5">Highlighted Work</h3>
 	        {WorkData.work.map((work, i) => {
