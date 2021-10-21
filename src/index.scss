@@ -16,6 +16,7 @@ $theme-colors: (
 
 html, body {
   height: 100%;
+  width: 100%;
   overflow: hidden;
   margin: 0;
   font-family: 'Open Sans', sans-serif !important;
@@ -29,7 +30,7 @@ html, body {
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: auto;
+  overflow: hidden auto;
   scroll-behavior: smooth;
 }
 
