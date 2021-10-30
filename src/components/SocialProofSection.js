@@ -1,7 +1,5 @@
 import React from "react";
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Popover from 'react-bootstrap/Popover';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Image from 'react-bootstrap/Image';
@@ -38,7 +36,9 @@ class SocialProofSection extends React.Component {
 		this.state = {
 			urls: {}
 		}
+	}
 
+	componentDidMount() {
 		let urls = {}
 		const proms = []
 		for (const socialProof of socialProofs) {
@@ -69,7 +69,7 @@ class SocialProofSection extends React.Component {
 						</Popover>
 						);
 					return (
-						<OverlayTrigger trigger="hover" placement="top" overlay={popover}>
+						<OverlayTrigger trigger="hover active" placement="top" overlay={popover} key={i}>
 							<Image className="socialProofLogo d-block" src={urls[socialProof.name]}></Image>
 						</OverlayTrigger>
 					)

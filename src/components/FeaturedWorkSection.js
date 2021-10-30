@@ -9,11 +9,12 @@ class FeaturedWorkSection extends React.Component {
 
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			urls: {}
 		}
-
+	}
+	
+	componentDidMount() {
 		const proms = [];
 		const urls = {};
 		for (const work of WorkData.work) {
@@ -38,14 +39,14 @@ class FeaturedWorkSection extends React.Component {
 	      <Row className="mt-5 my-md-5">
 	        <h3 className="text-center mb-5">Highlighted Work</h3>
 	        {WorkData.work.map((work, i) => {
-	          return (<Col className="text-center mb-4">
-	            <a href={work.linkUrl} target="_blank">
+	          return (<Col className="text-center mb-4" key={i}>
+	            <a href={work.linkUrl} target="_blank" rel="noreferrer">
 	              <Image src={urls[work.title]} className="highlightedWorkImage"></Image>
 	            </a>
 	            <div className="mt-3">
 	              <h5><strong>{work.title}</strong></h5>
 	              <p>{work.description}<br/>
-	              <a href={work.linkUrl} target="_blank" style={{textDecoration: "none"}} className="workLinkText">{work.linkText}</a></p>
+	              <a href={work.linkUrl} target="_blank" rel="noreferrer" style={{textDecoration: "none"}} className="workLinkText">{work.linkText}</a></p>
 	            </div>
 	          </Col>)
 	        })}

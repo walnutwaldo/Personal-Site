@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Container,
   Navbar,
@@ -23,7 +23,7 @@ const useSquareSplash = window.innerWidth / window.innerHeight < 1;
 
 const paths = {
   splashImage: `Photos/Splash${useSquareSplash ? 'Square' : ''}.png`,
-  splashImageLowRes: `Photos/Splash${useSquareSplash ? 'Square' : ''}.png`,
+  splashImageLowRes: `Photos/Splash${useSquareSplash ? 'Square' : ''}LowRes.png`,
   heroImage: 'Photos/Hero.png',
   resume: 'Yan Walden Resume.pdf',
   linkedInSocialLogo: 'Social Logos/linkedin.svg',
@@ -72,15 +72,15 @@ function ctaSection1(urls) {
     <Row className="cta1 my-3 my-md-5">
       <Col className="d-flex flex-column text-center">
         <h5><strong>Interested in what I do?</strong></h5>
-        <div>
-          <Button className="align-right rounded-pill cta-button me-1 mb-2" onClick={openEmail}>Get in Touch</Button>
+        <div className="mb-2">
+          <Button className="align-right rounded-pill cta-button me-1" onClick={openEmail}>Get in Touch</Button>
           <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-1"
           onClick={()=>window.open(urls['resume'], "_blank")}>
           Download Resume</Button>
         </div>
         <div className="mt-2">
-          <a href={linkedInUrl} target="_blank" className="me-1 socialLogo"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
-          <a href={githubUrl} target="_blank" className="ms-1 socialLogo"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
+          <a href={linkedInUrl} target="_blank" rel="noreferrer" className="me-1 socialLogo"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
+          <a href={githubUrl} target="_blank" rel="noreferrer" className="ms-1 socialLogo"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
         </div>
       </Col>
     </Row>)
@@ -141,10 +141,10 @@ function navbar(exitedSplash) {
         </Navbar.Brand>
         <Nav className="me-auto d-none d-md-flex">
           <Nav.Item>
-            <Nav.Link href={linkedInUrl} target="_blank">LinkedIn</Nav.Link>
+            <Nav.Link href={linkedInUrl} target="_blank" rel="noreferrer">LinkedIn</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href={githubUrl} target="_blank">GitHub</Nav.Link>
+            <Nav.Link href={githubUrl} target="_blank" rel="noreferrer">GitHub</Nav.Link>
           </Nav.Item>
         </Nav>
         {navbarToggle()}
@@ -179,8 +179,8 @@ function footer(urls) {
             <p className="my-auto"><strong>Copyright {year()}</strong></p>
           </Col>
           <Col className="col-12 my-2 col-md-4 my-md-0">
-            <a href={linkedInUrl} target="_blank" className="me-1 socialLogo darkTheme"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
-            <a href={githubUrl} target="_blank" className="ms-1 socialLogo darkTheme"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
+            <a href={linkedInUrl} target="_blank" rel="noreferrer" className="me-1 socialLogo darkTheme"><Image src={urls['linkedInSocialLogo']} width="38px"></Image></a>
+            <a href={githubUrl} target="_blank" rel="noreferrer" className="ms-1 socialLogo darkTheme"><Image src={urls['githubSocialLogo']} width="38px"></Image></a>
           </Col>
           <Col className="col-12 my-2 col-md-4 my-md-0 text-md-end"><strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com</Col>
         </Row>
@@ -197,17 +197,6 @@ class App extends React.Component{
 
   componentDidMount(){
     document.title = "Walden Yan"
-  }
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      heroLineIdx: 0,
-      fadeoutHero: false,
-      scrollPosition: 0,
-      exitedSplash: false,
-      urls: {}
-    }
 
     setInterval(() => {
       this.setState({
@@ -220,6 +209,17 @@ class App extends React.Component{
     }, 3000);
 
     this.loadUrls();
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      heroLineIdx: 0,
+      fadeoutHero: false,
+      scrollPosition: 0,
+      exitedSplash: false,
+      urls: {}
+    }
   }
 
   loadUrls() {
@@ -245,15 +245,15 @@ class App extends React.Component{
 
     const intViewportHeight = window.innerHeight;
 
-    if (scroll >= intViewportHeight) {
-      this.setState({
-        exitedSplash: true
-      })
+    let newState = {
+      scrollPosition: scroll
     }
 
-    this.setState({
-      scrollPosition: scroll
-    })
+    if (scroll >= intViewportHeight) {
+      newState.exitedSplash = true
+    }
+
+    this.setState(newState)
   }
 
   render(){
