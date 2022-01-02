@@ -1,0 +1,25 @@
+.socialProofLogo {
+	height: 80px !important;
+	max-height: none !important;
+
+	max-width: 120px !important;
+	min-width: 0 !important;
+	width: auto !important;
+
+	object-fit: contain;
+	flex-shrink: 0.1;
+
+	position: relative !important;
+}
+
+.socialProofLogo-wrapper {
+	position: relative;
+
+	> * {
+		position: relative !important;
+		overflow: visible !important;
+
+		width: auto !important;
+		height: auto !important;
+	}
+}

@@ -1,0 +1,25 @@
+.interactiveImage {
+	background-color: var(--secondary);
+	margin: 1.5rem;
+}
+
+.interactiveImage > * {
+	position: relative !important;
+	overflow: visible !important;
+
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+	transition-duration: 150ms !important;
+}
+
+.imageCardImage {
+	// transition: 0.2s;
+	// transform: translate(1rem, -1rem);
+
+	// object-fit: cover;
+	width: 100% !important;
+	position: relative !important;
+	height: auto !important;
+	max-height: none !important;
+
+	transition-duration: 150ms !important;
+}
