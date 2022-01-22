@@ -8,10 +8,6 @@ class InteractiveImage extends React.Component{
   	this.state = { active: false }
   }
 
-  componentDidMount() {
-    document.title = "Walden Yan (WIP)"
-  }
-
   makeActive(b) {
   	this.setState({
   		active: b
@@ -25,7 +21,7 @@ class InteractiveImage extends React.Component{
   			<div className={"interactiveImage rounded" + (active ? " active" : "")}
   			onMouseOver={() => this.makeActive(true)}
   			onMouseOut={() => this.makeActive(false)}>
-  	  		<Image src={this.props.src} className="rounded position-relative imageCardImage"></Image>
+  	  		<Image src={this.props.src} className="rounded position-relative imageCardImage"/>
   			</div>
   		</>
   	)

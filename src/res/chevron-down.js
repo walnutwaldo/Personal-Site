@@ -2,9 +2,11 @@ import React from 'react';
 
 const ChevronDown = () => {
   return (
-    <svg width="38" height="23" viewBox="0 0 38 23" fill="none" xmlns="http://www.w3.org/2000/svg" className="chevron-down">
-	<path d="M35.0061 3.00305L19.0031 19.0061L3 3.00305" stroke="white" strokeWidth="4.74057" strokeLinecap="round"/>
-	</svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+           className="feather feather-chevron-down">
+          <polyline points="6 9 12 15 18 9"/>
+      </svg>
   )
 }
 

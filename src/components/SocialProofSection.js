@@ -44,7 +44,7 @@ class SocialProofSection extends React.Component {
 		for (const socialProof of socialProofs) {
 			proms.push(getStorageUrl(socialProof.path).then((url) => {
 				urls[socialProof.name] = url;
-			}).catch((err) => {
+			}).catch(() => {
 				console.error('Failed to load from storage ' + socialProof.path);
 			}));
 		}
@@ -70,7 +70,7 @@ class SocialProofSection extends React.Component {
 						);
 					return (
 						<OverlayTrigger trigger="hover active" placement="top" overlay={popover} key={i}>
-							<Image className="socialProofLogo d-block" src={urls[socialProof.name]}></Image>
+							<Image className="socialProofLogo d-block" src={urls[socialProof.name]}/>
 						</OverlayTrigger>
 					)
 			})}
