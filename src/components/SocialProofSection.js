@@ -79,10 +79,10 @@ class SocialProofSection extends React.Component {
                         )
                     })}
                 </div>
-                <div id="socialProofInfo" className={"text-center " + (currentSocial ? "" : "invisible")}>
-                    <h3>{currentSocial ? currentSocial.name : "filler"}</h3>
+                <div id="socialProofInfo" className={"text-center "}>
+                    <h3>{currentSocial ? currentSocial.name : "What's this?"}</h3>
                     <p>
-                        {currentSocial ? currentSocial.description : "filler"}
+                        {currentSocial ? currentSocial.description : "Click on each logo to learn more"}
                     </p>
                 </div>
             </div>
