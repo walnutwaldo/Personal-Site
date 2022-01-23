@@ -52,14 +52,14 @@ class SkillsSection extends React.Component {
          )
 	      return (
 	        <Row className="skill mt-5" key={i}>
-	        	<Col className={"col-12 col-md-6 d-flex flex-column order-2 order-md-1 mx-2 mx-md-0" + (i % 2 === 0 ? "" : " order-lg-2")}>
+	        	<Col className={"col-12 col-md-5 col-lg-6 d-flex flex-column order-2 order-md-1 mx-2 mx-md-0" + (i % 2 === 0 ? "" : " order-lg-2")}>
 		          <h1 className="mt-3"><strong>{skill.title}</strong></h1>
 		          <p>
 		            {skill.description}
 		          </p>
 		          <div className="d-block d-md-none d-lg-block">{notableWork}</div>
 		        </Col>
-		        <Col className={"col-12 col-md-6 order-1 order-md-2 mt-0 my-md-auto" + (i % 2 === 0 ? "" : " order-lg-1")}>
+		        <Col className={"col-12 col-md-7 col-lg-6 order-1 order-md-2 mt-0 my-md-auto" + (i % 2 === 0 ? "" : " order-lg-1")}>
 		          <InteractiveImage src={urls[skill.title]}/>
 		        </Col>
 		        <Col className="d-none d-md-block d-lg-none order-3 pt-4">{notableWork}</Col>

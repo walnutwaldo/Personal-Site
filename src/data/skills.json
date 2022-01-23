@@ -2,17 +2,18 @@
 	"skills": [{
 		"title": "Software Engineering",
 		"imagePath": "Photos/MIT Dome.png",
-		"description": "I wrote my first line of code at the age of 12 while making a video game. I soon went on to study theoretical computer science and entered the world of competitive programming. In high school and college, I explored other applications of software from research to co-founding a startup. I have always valued clean code and scalable systems.",
+		"description": "I wrote my first line of code at the age of 12 while making a video game. I soon went on to study theoretical computer science and entered the world of competitive programming. In high school and college, I explored other applications of software from research to co-founding a startup. I have recently been exploring formal verification methods and smart contract engineering.",
 		"notableWork": [
 			"IOI Gold Medalist (Team USA)",
 			"Battlecode Winner",
 			"MIT PRIMES researcher",
-			"CTO @ GameFi"
+			"CTO @ GameFi",
+			"Smart Contract Engineering @ Rift Finance"
 		]
 	},{
 		"title": "Project Management",
 		"imagePath": "Photos/PRIMESConferencePresentation.png",
-		"description": "Though I love building technology systems, I have also grown to enjoy building \"people systems\". Coming from a technical background, leading people is something I learned over the years. But my strengths in delegating work, evaluating talent, and planning tight timelines has always proven useful in guiding a team around me.",
+		"description": "Though I love building technology systems, I have also grown to enjoy building \"people systems\". Coming from a technical background, leading people is something I learned over the years. But my strengths in delegating work, evaluating talent, inspiring exceptional engineers, and planning tight timelines has always proven useful in guiding a team around me.",
 		"notableWork": [
 			"Leading engineering & design @ GameFi",
 			"Reforming high school student government",
@@ -22,9 +23,10 @@
 	},{
 		"title": "Finance & Investment",
 		"imagePath": "Photos/GameFiWhiteSteps.JPG",
-		"description": "My interest in finance started with paper trading in high school. This became a hobby of real security trading & investment. I grew to enjoy analyzing company growth and opportunity, especially in tech. This interest soon expanded to venture capital and forming my own company during COVID-19 in the fast-growing space between financial tech and entertainment.",
+		"description": "My interest in finance started with paper trading in high school. This became a hobby of real security trading & investment. I grew to enjoy analyzing company growth and opportunity, especially in tech. This interest soon expanded to venture capital and forming my own FinTech company during COVID-19 and advise in the development of financial products at other startups.",
 		"notableWork": [
-			"Founding and fundraising for GameFi",
+			"Founding and fundraising @ GameFi",
+			"Financial product management @ Rift Finance",
 			"Diligence analyst & sourcing associate @ Harvard’s venture capital organization (HUCP)",
 			"North American finalist of Wharton’s KWHS Investment Competition",
 			"Founder & President of high school investment club"

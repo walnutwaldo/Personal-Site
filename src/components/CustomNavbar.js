@@ -6,12 +6,12 @@ import {socials} from "../tools/constants";
 export default function CustomNavbar(props) {
     const { exitedSplash } = props;
     return (
-        <Navbar className={"color-nav" + (exitedSplash ? "" : " hidden")} expand="md" sticky="top" variant="light">
+        <Navbar className={"color-nav" + (exitedSplash ? "" : " hidden")} expand="lg" sticky="top" variant="light">
             <Container className="mainContainer">
                 <Navbar.Brand className="font1 fontLarge">
                     <strong>Walden Yan</strong>
                 </Navbar.Brand>
-                <Nav className="me-auto d-none d-md-flex">
+                <Nav className="me-auto d-none d-lg-flex">
                     {socials.map((item, i) => {
                         return (
                             <Nav.Item key={i}>
