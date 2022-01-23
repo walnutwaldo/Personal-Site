@@ -30,7 +30,7 @@ class HeroSection extends React.Component {
             <section name="overview" id="overview" className="pt-md-5">
                 <Row className="heroSection mt-3">
                     <Col className="d-flex flex-column col-12 col-lg-6 text-center text-lg-start">
-                        <h1 className={"mt-0 mt-md-5" + (fadeoutHero ? " fadeout" : "")}>
+                        <h1 className={"mt-0 mt-md-5" + (fadeoutHero ? " invisible" : "")}>
                             <strong>
                                 {heroLines[heroLineIdx]}
                             </strong>

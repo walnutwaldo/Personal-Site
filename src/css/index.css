@@ -10506,8 +10506,7 @@ h1, .h1 {
   transition: 0.2s;
   opacity: 1;
 }
-
-h1.fadeout, .fadeout.h1 {
+h1.invisible, .invisible.h1 {
   opacity: 0;
 }
 

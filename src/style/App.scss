@@ -29,10 +29,10 @@ p {
 h1 {
 	transition: 0.2s;
 	opacity: 1;
-}
 
-h1.fadeout {
-	opacity: 0;
+	&.invisible {
+		opacity: 0;
+	}
 }
 
 .scrollStart {
