@@ -23,7 +23,7 @@ p {
 .heroParagraph {
 	font-weight: 500;
 	font-size: 1.25rem;
-	color: var(--medium-gray);
+	color: var(--dark-gray);
 }
 
 h1 {
@@ -32,6 +32,10 @@ h1 {
 
 	&.invisible {
 		opacity: 0;
+	}
+
+	&.heroTitle {
+		color: var(--tertiary);
 	}
 }
 

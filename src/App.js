@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Col, Container, Image, Row} from 'react-bootstrap';
-import {FeaturedWorkSection, SkillsSection} from "./components";
+import {FeaturedWorkSection, SkillsSection, SocialProofSection} from "./components";
 
 import ChevronDown from "./res/chevron-down.js";
 
@@ -147,6 +147,7 @@ class App extends React.Component {
                 <div id="mainBody">
                     <Container>
                         <HeroSection heroLineIdx={heroLineIdx} fadeoutHero={fadeoutHero} urls={urls}/>
+                        <SocialProofSection className={"d-block d-xxl-none mx-auto"}/>
                         {ctaSection1(urls)}
                         <SkillsSection/>
                         <FeaturedWorkSection/>
