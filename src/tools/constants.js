@@ -1,5 +1,7 @@
 import React from "react";
 
+export const calendlyUrl = "https://calendly.com/waldenyan20/meeting";
+
 export const socials = [
     {
         name: "LinkedIn",
