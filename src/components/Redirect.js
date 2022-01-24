@@ -3,7 +3,7 @@ import React, {Component} from "react";
 export class Redirect extends Component {
 
     componentWillMount() {
-        // window.location = this.props.url;
+        window.location = this.props.url;
     }
 
     render() {
