@@ -22,7 +22,7 @@ const paths = {
 
 function ctaSection1(urls) {
     return (
-        <Row className="cta1 my-3 my-md-5">
+        <Row className="cta1 my-5">
             <Col className="d-flex flex-column text-center">
                 <h5><strong>Want to work together?</strong></h5>
                 <div className="my-2">
@@ -48,7 +48,7 @@ function ctaSection1(urls) {
 
 function ctaSection2() {
     return (
-        <Row className="cta1 mt-3 mb-5">
+        <Row className="cta1 mt-5 mb-5">
             <Col className="d-flex flex-column text-center">
                 <h5><strong>Interested in learning more?</strong></h5>
                 <div>
@@ -149,8 +149,8 @@ class App extends React.Component {
                         <HeroSection heroLineIdx={heroLineIdx} fadeoutHero={fadeoutHero} urls={urls}/>
                         <SocialProofSection className={"d-block d-xxl-none mx-auto"}/>
                         {ctaSection1(urls)}
-                        <SkillsSection/>
                         <FeaturedWorkSection/>
+                        <SkillsSection/>
                         {ctaSection2()}
                     </Container>
                 </div>

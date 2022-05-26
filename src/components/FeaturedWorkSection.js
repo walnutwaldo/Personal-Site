@@ -13,7 +13,7 @@ class FeaturedWorkSection extends React.Component {
 	render() {
 
 		return(
-	    <section name="work" id="work" className="pt-md-5">
+	    <section name="work" id="work" className="pt-md-1">
 	      <Row className="mt-5 my-md-5">
 	        <h3 className="text-center mb-5">Highlighted Work</h3>
 	        {WorkData.work.map((work, i) => {

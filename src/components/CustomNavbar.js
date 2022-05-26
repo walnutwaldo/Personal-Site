@@ -3,6 +3,21 @@ import React from "react";
 import {contactEmail, contactTwitter} from "../tools/utils";
 import {socials} from "../tools/constants";
 
+const navItems = [
+    {
+        text: 'Overview',
+        href: '#overview'
+    },
+    {
+        text: 'Work',
+        href: '#work'
+    },
+    {
+        text: 'Skills',
+        href: '#skills'
+    },
+]
+
 export default function CustomNavbar(props) {
     const { exitedSplash } = props;
     return (
@@ -27,15 +42,11 @@ export default function CustomNavbar(props) {
                 </Navbar.Toggle>
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="text-center">
-                        <Nav.Item>
-                            <Nav.Link href="#overview">Overview</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="#skills">Skills</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="#work">Work</Nav.Link>
-                        </Nav.Item>
+                        {navItems.map((navItem, i) => {
+                            return <Nav.Item key={i}>
+                                <Nav.Link href={navItem.href}>{navItem.text}</Nav.Link>
+                            </Nav.Item>
+                        })}
                         <Nav.Item>
                             <Button className="ms-2 rounded-pill" onClick={contactEmail}>
                                 Contact Me

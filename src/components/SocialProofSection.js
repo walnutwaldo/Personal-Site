@@ -65,7 +65,7 @@ class SocialProofSection extends React.Component {
         }
 
         return (
-            <div className={"socialProofSection " + this.props.className}>
+            <div className={"border-bottom socialProofSection " + this.props.className}>
                 <div className="my-4 d-flex flex-row justify-content-between">
                     {socialProofs.map(function (socialProof, i) {
                         return (
@@ -79,9 +79,9 @@ class SocialProofSection extends React.Component {
                         )
                     })}
                 </div>
-                <div id="socialProofInfo" className={"text-center "}>
-                    <h3>{currentSocial ? currentSocial.name : "What's this?"}</h3>
-                    <p>
+                <div id="socialProofInfo" className={"text-center"}>
+                    <h4>{currentSocial ? currentSocial.name : "What's this?"}</h4>
+                    <p className={'fs-6'}>
                         {currentSocial ? currentSocial.description : "Click on each logo to learn more"}
                     </p>
                 </div>

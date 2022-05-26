@@ -38,7 +38,7 @@ class SkillsSection extends React.Component {
 	render() {
 		const { urls } = this.state;
 
-	  return (<section name="skills" id="skills" className="pt-md-5">
+	  return (<section name="skills" id="skills" className="pt-md-3 my-5">
 	    {SkillsData.skills.map((skill, i) => {
 	    	const notableWork = (
 		      <>
