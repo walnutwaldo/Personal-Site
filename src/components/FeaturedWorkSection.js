@@ -24,7 +24,7 @@ class FeaturedWorkSection extends React.Component {
 	            <div className="mt-3">
 	              <h5><strong>{work.title}</strong></h5>
 	              <p>{work.description}<br/>
-	              <a href={work.linkUrl} target="_blank" rel="noreferrer" style={{textDecoration: "none"}} className="workLinkText">{work.linkText}</a></p>
+	              <a href={work.linkUrl} target="_blank" rel="noreferrer" style={{textDecoration: "none"}} className="primaryLink">{work.linkText}</a></p>
 	            </div>
 	          </Col>)
 	        })}

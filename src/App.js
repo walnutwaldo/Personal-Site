@@ -26,12 +26,13 @@ function ctaSection1(urls) {
             <Col className="d-flex flex-column text-center">
                 <h5><strong>Want to work together?</strong></h5>
                 <div className="my-2">
-                    <Button className="align-right rounded-pill cta-button me-1" onClick={contactTwitter}>
+                    <Button className="align-right cta-button me-1" onClick={contactTwitter}>
                         Send a DM
                     </Button>
-                    <Button variant="outline-primary" className="align-left rounded-pill cta-button ms-1"
+                    <Button variant="outline-primary" className="align-left cta-button ms-1"
                             onClick={() => window.open(urls['resume'], "_blank")}>
-                        Download Resume</Button>
+                        Download Resume
+                    </Button>
                 </div>
                 <div className="mt-2">
                     {socials.map((item, i) => {
@@ -52,7 +53,7 @@ function ctaSection2() {
             <Col className="d-flex flex-column text-center">
                 <h5><strong>Interested in learning more?</strong></h5>
                 <div>
-                    <Button className="align-right rounded-pill cta-button me-1" onClick={contactEmail}>
+                    <Button className="align-right cta-button me-1" onClick={contactEmail}>
                         Contact Me
                     </Button>
                 </div>
@@ -79,8 +80,8 @@ function splashSection(scrollPosition, urls) {
           </span>
                 </div>
             </div>
-            <Image src={urls['splashImageLowRes']} style={{top: splashOffset + "px"}}/>
-            <Image src={urls['splashImage']} style={{top: splashOffset + "px"}}/>
+            <Image src={urls['splashImageLowRes']} style={{top: splashOffset + "px"}} className={""}/>
+            <Image src={urls['splashImage']} style={{top: splashOffset + "px", filter: `blur(${scrollPosition / 25}px)`}} className={""}/>
         </div>)
 }
 

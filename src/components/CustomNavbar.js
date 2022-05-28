@@ -19,7 +19,7 @@ const navItems = [
 ]
 
 export default function CustomNavbar(props) {
-    const { exitedSplash } = props;
+    const {exitedSplash} = props;
     return (
         <Navbar className={"color-nav" + (exitedSplash ? "" : " hidden")} expand="lg" sticky="top" variant="light">
             <Container className="mainContainer">
@@ -43,15 +43,11 @@ export default function CustomNavbar(props) {
                 <Navbar.Collapse className="justify-content-end">
                     <Nav className="text-center">
                         {navItems.map((navItem, i) => {
-                            return <Nav.Item key={i}>
-                                <Nav.Link href={navItem.href}>{navItem.text}</Nav.Link>
-                            </Nav.Item>
+                            return <Nav.Link key={i} href={navItem.href}>{navItem.text}</Nav.Link>
                         })}
-                        <Nav.Item>
-                            <Button className="ms-2 rounded-pill" onClick={contactEmail}>
-                                Contact Me
-                            </Button>
-                        </Nav.Item>
+                        <Nav.Link className={"primaryLink"} onClick={contactEmail}>
+                            <u>Contact Me</u>
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

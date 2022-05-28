@@ -26,7 +26,7 @@ export const heroText = (<p>
 </p>);
 
 export const heroLines = [
-    "Building the tech of tomorrow",
+    "Buidling the tech\b\b\b\b\b\b\b\b\b\b\b\b\b\blding the tech of tomorrow",
     "Working with exceptional teams",
     "Love for engineering"
 ];

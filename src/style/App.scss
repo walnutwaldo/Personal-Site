@@ -26,6 +26,10 @@ p {
 	color: var(--dark-gray);
 }
 
+.move-left {
+	transform: translateX(-50%);
+}
+
 h1 {
 	transition: 0.2s;
 	opacity: 1;
@@ -171,8 +175,8 @@ h3 {
 	};
 }
 
-.workLinkText {
-	color: var(--primary);
+.primaryLink {
+	color: var(--primary) !important;
 	font-weight: 700;
 }
 

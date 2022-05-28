@@ -10409,9 +10409,9 @@ textarea.form-control-lg {
   }
 }
 :root {
-  --primary: #3786E3;
-  --secondary: #89c8ff;
-  --tertiary: #001c34;
+  --primary: #2266dd;
+  --secondary: #223448;
+  --tertiary: #040c1a;
   --medium-gray: #737373;
   --light-gray: #ddd;
   --dark-gray: #222;
@@ -10518,6 +10518,10 @@ p {
   font-weight: 500;
   font-size: 1.25rem;
   color: var(--dark-gray);
+}
+
+.move-left {
+  transform: translateX(-50%);
 }
 
 h1, .h1 {
@@ -10646,8 +10650,8 @@ h3, .h3 {
   box-shadow: 2px 2px 10px 5px rgba(0, 0, 50, 0.2);
 }
 
-.workLinkText {
-  color: var(--primary);
+.primaryLink {
+  color: var(--primary) !important;
   font-weight: 700;
 }
 
