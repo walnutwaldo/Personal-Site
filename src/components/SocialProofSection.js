@@ -66,7 +66,7 @@ class SocialProofSection extends React.Component {
 
         return (
             <div className={"border-bottom socialProofSection " + this.props.className}>
-                <div className="my-4 d-flex flex-row justify-content-between">
+                <div className="my-4 px-2 d-flex flex-row justify-content-between">
                     {socialProofs.map(function (socialProof, i) {
                         return (
                             <div className={"socialProofLogo " + (i === currIdx ? " highlighted" : "")} onMouseOver={

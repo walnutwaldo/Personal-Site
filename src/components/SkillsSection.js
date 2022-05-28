@@ -54,7 +54,7 @@ class SkillsSection extends React.Component {
 	        <Row className="skill mt-5" key={i}>
 	        	<Col className={"col-12 col-md-5 col-lg-6 d-flex flex-column order-2 order-md-1 mx-2 mx-md-0" + (i % 2 === 0 ? "" : " order-lg-2")}>
 		          <h1 className="mt-3"><strong>{skill.title}</strong></h1>
-		          <p>
+		          <p className={"pe-2"}>
 		            {skill.description}
 		          </p>
 		          <div className="d-block d-md-none d-lg-block">{notableWork}</div>

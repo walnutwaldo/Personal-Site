@@ -26,10 +26,10 @@ function ctaSection1(urls) {
             <Col className="d-flex flex-column text-center">
                 <h5><strong>Want to work together?</strong></h5>
                 <div className="my-2">
-                    <Button className="align-right cta-button me-1" onClick={contactTwitter}>
+                    <Button className="align-right cta-button m-1" onClick={contactTwitter}>
                         Send a DM
                     </Button>
-                    <Button variant="outline-primary" className="align-left cta-button ms-1"
+                    <Button variant="outline-primary" className="align-left cta-button m-1"
                             onClick={() => window.open(urls['resume'], "_blank")}>
                         Download Resume
                     </Button>
