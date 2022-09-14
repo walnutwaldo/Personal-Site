@@ -29,10 +29,10 @@ function ctaSection1(urls) {
                     <Button className="align-right cta-button m-1" onClick={contactTwitter}>
                         Send a DM
                     </Button>
-                    {/*<Button variant="outline-primary" className="align-left cta-button m-1"*/}
-                    {/*        onClick={() => window.open(urls['resume'], "_blank")}>*/}
-                    {/*    Download Resume*/}
-                    {/*</Button>*/}
+                    <Button variant="outline-primary" className="align-left cta-button m-1"
+                            onClick={() => window.open(urls['resume'], "_blank")}>
+                        Download Resume
+                    </Button>
                 </div>
                 <div className="mt-2">
                     {socials.map((item, i) => {
