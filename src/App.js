@@ -35,7 +35,7 @@ function ctaSection1(urls) {
                     </Button>
                 </div>
                 <div className="mt-2">
-                    {socials.map((item, i) => {
+                    {socials.filter((item) => item.image !== undefined).map((item, i) => {
                         return (
                             <a href={item.url} key={i} target="_blank" rel="noreferrer" className="mx-1 socialLogo">
                                 <Image src={item.image} width="38px"/>

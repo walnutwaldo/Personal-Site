@@ -13,7 +13,7 @@ const navItems = [
         href: '#work'
     },
     {
-        text: 'Skills',
+        text: 'Passions',
         href: '#skills'
     },
 ]

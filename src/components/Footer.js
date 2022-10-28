@@ -15,14 +15,18 @@ export default function Footer() {
                         <p className="my-auto"><strong>Copyright {year()}</strong></p>
                     </Col>
                     <Col className="col-12 my-2 col-md-4 my-md-0">
-                        {socials.map((item, i) => {
-                            return (
-                                <a href={item.url} key={i} target="_blank" rel="noreferrer"
-                                   className="mx-1 socialLogo darkTheme">
-                                    <Image src={item.image} width="38px"/>
-                                </a>
-                            )
-                        })}
+                        {
+                            socials.filter(
+                                (item) => item.image !== undefined
+                            ).map((item, i) => {
+                                return (
+                                    <a href={item.url} key={i} target="_blank" rel="noreferrer"
+                                       className="mx-1 socialLogo darkTheme">
+                                        <Image src={item.image} width="38px"/>
+                                    </a>
+                                )
+                            })
+                        }
                     </Col>
                     <Col className="col-12 my-2 col-md-4 my-md-0 text-md-end">
                         <strong>Made by Walden Yan</strong><br/>waldenyan20@gmail.com
