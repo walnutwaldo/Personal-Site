@@ -19,7 +19,7 @@ export const socials = [
         image: "/icons/twitter.svg"
     },
     {
-        name: "My Thoughts",
+        name: "Writing",
         url: "https://waldensthoughts.bloggi.co/",
         image: undefined
     }

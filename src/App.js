@@ -10,6 +10,7 @@ import {socials} from "./tools/constants";
 import {contactEmail, contactTwitter} from "./tools/utils";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
+import WritingSection from "./components/WritingSection";
 
 const useSquareSplash = window.innerWidth / window.innerHeight < 1;
 
@@ -151,6 +152,7 @@ class App extends React.Component {
                         <SocialProofSection className={"d-block d-xxl-none mx-auto"}/>
                         {ctaSection1(urls)}
                         <FeaturedWorkSection/>
+                        <WritingSection/>
                         <SkillsSection/>
                         {ctaSection2()}
                     </Container>
