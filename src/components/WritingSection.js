@@ -6,7 +6,7 @@ export default function WritingSection() {
         <section name="writing" id="writing" className="pt-md-1">
             <Row className="mt-5 my-md-5">
                 <h3 className="text-center mb-5">Recent Writing</h3>
-                <div className="row">
+                <div className="row mx-0">
                     <div className={"d-none d-xxl-block col-xxl-1"}></div>
                     <div className="col-lg-6 col-xxl-4 pe-lg-4 my-auto">
                         <img
