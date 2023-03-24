@@ -88,6 +88,7 @@ h1 {
     &.top-bar {
       transform: translate(0, -8px);
     }
+
     &.bottom-bar {
       transform: translate(0, 8px);
     }
@@ -97,9 +98,11 @@ h1 {
     &.top-bar {
       transform: rotate(-45deg);
     }
+
     &.middle-bar {
       opacity: 0;
     }
+
     &.bottom-bar {
       transform: rotate(45deg);
     }
@@ -149,8 +152,17 @@ SKILLS
 
 .list-group-item {
   transition: 0.2s;
+
   &:hover {
     padding-left: 40px;
+  }
+}
+
+.showmorelesstext {
+  transition: 0.2s;
+  &:hover {
+    cursor: pointer;
+    color: var(--primary);
   }
 }
 

@@ -29,3 +29,6 @@ yarn-error.log*
 
 # IntelliJ
 .idea
+
+# SCSS Build
+src/css
