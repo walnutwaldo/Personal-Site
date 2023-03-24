@@ -1,27 +1,46 @@
 {
-	"work": [{
-		"src": "/images/mitprimes_thumbnail.png",
-		"title": "MIT PRIMES Research",
-		"description": "Conducted research in cryptography and machine learning.",
-		"linkText": "Read Cryptography Paper",
-		"linkUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/SyFER.pdf?alt=media&token=81acaedc-d869-4a8e-a776-55ad39634bbf"
-	}, {
-		"src": "/images/ioi_thumbnail.png",
-		"title": "IOI Gold",
-		"description": "Won a gold medal at the International Olympiad in Informatics for the USA",
-		"linkText": "Read More",
-		"linkUrl": "https://www.seas.harvard.edu/news/2020/10/coding-gold"
-	}, {
-		"src": "/images/gamefi_thumbnail.png",
-		"title": "GameFi",
-		"description": "Co-Founder & CTO of fintech company. Raised funds and led engineering.",
-		"linkText": "Company Site",
-		"linkUrl": "https://www.gamefi.com/"
-	}, {
-		"src": "/images/rift_thumbnail.png",
-		"title": "Rift Finance",
-		"description": "Smart contract engineering and business development - $50M+ in TVL.",
-		"linkText": "Company Site",
-		"linkUrl": "https://rift.finance/"
-	}]
+  "work": [
+    {
+      "src": "/images/mitprimes_thumbnail.png",
+      "title": "MIT PRIMES Research",
+      "description": "Conducted research in cryptography and machine learning.",
+      "linkText": "Read Cryptography Paper",
+      "linkUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/SyFER.pdf?alt=media&token=81acaedc-d869-4a8e-a776-55ad39634bbf"
+    },
+    {
+      "src": "/images/ioi_thumbnail.png",
+      "title": "IOI Gold",
+      "description": "Won a gold medal at the International Olympiad in Informatics for the USA",
+      "linkText": "Read More",
+      "linkUrl": "https://www.seas.harvard.edu/news/2020/10/coding-gold"
+    },
+    {
+      "src": "/images/deepreason_thumbnail.png",
+      "title": "DeepReason",
+      "description": "Founder & CEO. Advanced formal tooling for smart contract auditing.",
+      "linkText": "Company Site",
+      "linkUrl": "https://deepreason.xyz/"
+    },
+    {
+      "src": "/images/rift_thumbnail.png",
+      "title": "Rift Finance",
+      "description": "Smart contract engineering and business development - $50M+ in TVL.",
+      "linkText": "Company Site",
+      "linkUrl": "https://rift.finance/"
+    },
+    {
+      "src": "/images/enhanceai_thumbnail.png",
+      "title": "EnhanceAI",
+      "description": "Two-lines-of-code to embed AI autocomplete into any application. Popular Twitter launch.",
+      "linkText": "Website.",
+      "linkUrl": "https://enhanceai.com/"
+    },
+    {
+      "src": "/images/gamefi_thumbnail.png",
+      "title": "GameFi",
+      "description": "Co-Founder & CTO. Literally gamifying savings.",
+      "linkText": "Company Site",
+      "linkUrl": "https://www.gamefi.com/"
+    }
+  ]
 }

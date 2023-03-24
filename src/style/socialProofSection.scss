@@ -1,33 +1,32 @@
 .socialProofSection {
-	max-width: 800px;
+  max-width: 800px;
 
-	.socialProofLogo {
-		max-width: calc(min(22%, 120px));
-		flex-shrink: 0.1;
+  .socialProofLogo {
+    max-width: calc(min(22%, 120px));
+    flex-shrink: 0.1;
 
-		border-bottom: 3px solid transparent;
+    border-bottom: 3px solid transparent;
 
-		img {
-			object-fit: contain;
-			width: 100%;
-			height: 80px;
-			transition: 0.2s transform;
-			filter: saturate(0%);
-			transform: translateY(0px);
-		}
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 80px;
+      transition: 0.2s transform;
+      filter: saturate(0%);
+      transform: translateY(0px);
+    }
 
-		&.highlighted {
+    &.highlighted {
+      img {
+        filter: saturate(100%);
+        transform: translateY(-5px);
+      }
 
-			img {
-				filter: saturate(100%);
-				transform: translateY(-5px);
-			}
+      // border-bottom: 3px solid var(--medium-gray);
+    }
+  }
 
-			// border-bottom: 3px solid var(--medium-gray);
-		}
-	}
-
-	#socialProofInfo {
-		color: var(--medium-gray);
-	}
+  #socialProofInfo {
+    color: var(--medium-gray);
+  }
 }
