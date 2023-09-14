@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import {
   FeaturedWorkSection,
-  SkillsSection,
+  // SkillsSection,
   SocialProofSection,
 } from "./components";
 import { ChevronDown } from "feather-icons-react";
@@ -97,7 +97,7 @@ function SplashSection(props) {
   return (
     <div id="splash">
       <div className="text-center d-table splashText">
-        <div className="d-table-cell align-middle">
+        <div className="d-table-cell align-middle text-center">
           <span className="fontLarge">Hello, I'm</span>
           <br />
           <span className="fontLargest font1">Walden Yan</span>
@@ -193,7 +193,11 @@ class App extends React.Component {
     return (
       <div
         id="scrollContainer"
-        className={exitedSplash ? "" : "snap-y-mandatory"}
+        className={
+          exitedSplash && scrollPosition > window.innerHeight
+            ? ""
+            : "snap-y-mandatory"
+        }
         onScroll={this.listenToScroll.bind(this)}
       >
         <SplashSection scrollPosition={scrollPosition} urls={urls} />
@@ -210,8 +214,8 @@ class App extends React.Component {
             {ctaSection1(urls)}
             <FeaturedWorkSection />
             <WritingSection />
-            <SkillsSection />
-            {ctaSection2()}
+            {/* <SkillsSection /> */}
+            {/* {ctaSection2()} */}
           </Container>
         </div>
         <Footer />

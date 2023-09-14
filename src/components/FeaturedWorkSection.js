@@ -50,7 +50,7 @@ function FeaturedWorkSection(props) {
             </Col>
           );
         })}
-        {numShown < WorkData.work.length ? (
+        {/* {numShown < WorkData.work.length ? (
           <span
             class={"showmorelesstext"}
             onClick={() => {
@@ -68,7 +68,7 @@ function FeaturedWorkSection(props) {
           >
             Show Less
           </span>
-        ) : undefined}
+        ) : undefined} */}
       </Row>
     </section>
   );

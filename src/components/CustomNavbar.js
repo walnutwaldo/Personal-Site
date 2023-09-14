@@ -12,10 +12,10 @@ const navItems = [
     text: "Work",
     href: "#work",
   },
-  {
-    text: "Passions",
-    href: "#skills",
-  },
+  // {
+  //   text: "Passions",
+  //   href: "#skills",
+  // },
 ];
 
 export default function CustomNavbar(props) {
