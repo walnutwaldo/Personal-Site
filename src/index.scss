@@ -17,7 +17,7 @@ $theme-colors: (
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   margin: 0;
@@ -39,6 +39,10 @@ body {
 
 .snap-y-mandatory {
   scroll-snap-type: y mandatory;
+}
+
+.snap-y-proximity {
+  scroll-snap-type: y proximity;
 }
 
 code {

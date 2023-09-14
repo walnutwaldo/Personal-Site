@@ -170,6 +170,7 @@ class App extends React.Component {
   }
 
   listenToScroll(event) {
+    console.log("scroll event");
     const target = event.target;
     const scroll = target.scrollTop;
 
@@ -186,6 +187,12 @@ class App extends React.Component {
     this.setState(newState);
   }
 
+  scrollContainerClass(exitedSplash, scrollPosition) {
+    return exitedSplash && scrollPosition > window.innerHeight
+      ? ""
+      : "snap-y-mandatory";
+  }
+
   render() {
     const { heroLineIdx, fadeoutHero, scrollPosition, exitedSplash, urls } =
       this.state;
@@ -193,11 +200,7 @@ class App extends React.Component {
     return (
       <div
         id="scrollContainer"
-        className={
-          exitedSplash && scrollPosition > window.innerHeight
-            ? ""
-            : "snap-y-mandatory"
-        }
+        className={this.scrollContainerClass(exitedSplash, scrollPosition)}
         onScroll={this.listenToScroll.bind(this)}
       >
         <SplashSection scrollPosition={scrollPosition} urls={urls} />
