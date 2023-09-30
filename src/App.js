@@ -30,9 +30,9 @@ function ctaSection1(urls) {
   return (
     <Row className="cta1 my-5">
       <Col className="d-flex flex-column text-center">
-        <h5>
+        {/* <h5>
           <strong>Want to work together?</strong>
-        </h5>
+        </h5> */}
         <div className="my-2">
           <Button
             className="align-right cta-button m-1"
@@ -102,18 +102,18 @@ function SplashSection(props) {
           <br />
           <span className="fontLargest font1">Walden Yan</span>
           <br />
-          <span
-            className="continueChevron"
-            style={{
-              opacity: 1 - Math.min(1, scrollPosition / window.innerHeight),
-            }}
-            onClick={() => {
-              document.getElementById("overview").scrollIntoView();
-            }}
-          >
-            <ChevronDown width={32} height={32} />
-          </span>
         </div>
+        <span
+          className="continueChevron"
+          style={{
+            opacity: 1 - Math.min(1, scrollPosition / window.innerHeight),
+          }}
+          onClick={() => {
+            document.getElementById("overview").scrollIntoView();
+          }}
+        >
+          <ChevronDown width={32} height={32} />
+        </span>
       </div>
       <Image
         src={urls["splashImageLowRes"]}

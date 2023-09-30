@@ -39,7 +39,7 @@ export default function Footer() {
               })}
           </Col>
           <Col className="col-12 my-2 col-md-4 my-md-0 text-md-end">
-            <strong>Made by Walden Yan</strong>
+            <strong>Made by yours truly</strong>
             <br />
             waldenyan20@gmail.com
           </Col>

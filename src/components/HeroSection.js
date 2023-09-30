@@ -4,7 +4,7 @@ import { InteractiveImage, SocialProofSection } from "./index";
 import React from "react";
 
 const NEW_HERO_TEXT_INTERVAL = 4000;
-const TYPE_DELAY = 35;
+const TYPE_DELAY = 100;
 const CURSOR_FLASH = 600;
 
 class HeroSection extends React.Component {
@@ -66,7 +66,7 @@ class HeroSection extends React.Component {
     const heroLineInstructions = heroLines[heroLineIdx].slice(0, heroChars);
     let heroLine = "";
     for (const c of heroLineInstructions) {
-      if (c == "\b") {
+      if (c === "\b") {
         heroLine = heroLine.slice(0, heroLine.length - 1);
       } else {
         heroLine += c;
