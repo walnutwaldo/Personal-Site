@@ -117,14 +117,14 @@ function SplashSection(props) {
       </div>
       <Image
         src={urls["splashImageLowRes"]}
-        style={{ top: splashOffset + "px" }}
+        style={{ top: splashOffset + "px", filter: `brightness(0.65)` }}
         className={""}
       />
       <Image
         src={urls["splashImage"]}
         style={{
           top: splashOffset + "px",
-          filter: `blur(${scrollPosition / 25}px)`,
+          filter: `blur(${scrollPosition / 25}px) brightness(0.65)`,
         }}
         className={""}
       />
