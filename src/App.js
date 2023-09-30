@@ -109,7 +109,10 @@ function SplashSection(props) {
             opacity: 1 - Math.min(1, scrollPosition / window.innerHeight),
           }}
           onClick={() => {
-            document.getElementById("overview").scrollIntoView();
+            document.getElementById("scrollContainer").scrollTo({
+              top: window.innerHeight,
+              behavior: "smooth",
+            });
           }}
         >
           <ChevronDown width={32} height={32} />

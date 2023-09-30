@@ -43,13 +43,14 @@ class HeroSection extends React.Component {
   }
 
   fadeOutHeroLine() {
-    clearInterval(this.cursorFlashInterval);
-    this.cursorFlashInterval = null;
-    this.fadeoutSchedule = null;
-    this.setState({
-      fadeoutHero: true,
-    });
-    setTimeout(this.nextHeroLine.bind(this), 200);
+    return;
+    // clearInterval(this.cursorFlashInterval);
+    // this.cursorFlashInterval = null;
+    // this.fadeoutSchedule = null;
+    // this.setState({
+    //   fadeoutHero: true,
+    // });
+    // setTimeout(this.nextHeroLine.bind(this), 200);
   }
 
   nextHeroLine() {
@@ -73,9 +74,9 @@ class HeroSection extends React.Component {
       }
     }
     return (
-      <section name="overview" id="overview" className="pt-md-5">
-        <Row className="heroSection mt-3">
-          <Col className="d-flex flex-column col-12 col-lg-6 text-center text-lg-start">
+      <section name="overview" id="overview" style={{ paddingTop: "2rem" }}>
+        <Row className="heroSection">
+          <Col className="d-flex flex-column col-12 col-lg-6 text-start">
             <h1
               className={
                 "mt-0 mb-3 mt-md-5 heroTitle " +
@@ -93,7 +94,7 @@ class HeroSection extends React.Component {
                 </span>
               </strong>
             </h1>
-            <p className="heroParagraph d-none d-lg-inline">{heroText}</p>
+            <p className="heroParagraph">{heroText}</p>
             <SocialProofSection className={"mt-auto d-none d-xxl-block"} />
           </Col>
           <Col className="d-none d-md-block d-lg-none col-1" />
@@ -101,9 +102,6 @@ class HeroSection extends React.Component {
             <InteractiveImage src={urls["heroImage"]} />
           </Col>
           <Col className="d-none d-md-block d-lg-none col-1" />
-          <Col className="col-12 d-lg-none p-4">
-            <p className="heroParagraph mt-3">{heroText}</p>
-          </Col>
         </Row>
       </section>
     );
