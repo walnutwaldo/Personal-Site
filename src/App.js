@@ -188,7 +188,7 @@ class App extends React.Component {
   }
 
   scrollContainerClass(exitedSplash, scrollPosition) {
-    return exitedSplash && scrollPosition > window.innerHeight
+    return exitedSplash // && scrollPosition > window.innerHeight
       ? ""
       : "snap-y-mandatory";
   }
