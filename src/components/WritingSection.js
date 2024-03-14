@@ -13,6 +13,37 @@ export default function WritingSection() {
           <div className={"d-none d-xxl-block col-xxl-1"}></div>
           <div className="col-lg-6 col-xxl-4 pe-lg-4 my-auto">
             <img
+              src="https://images.unsplash.com/photo-1581091870628-2cdfb4a1decc" // A placeholder image, the user should replace this with an appropriate image
+              alt="Announcement Image"
+              className={"w-100 rounded-lg"}
+            />
+          </div>
+          <div className="col-lg-6 ps-lg-4 mt-4 mt-lg-0 flex-column">
+            <h3>Exciting News: Joining Cognition AI</h3>
+            <p>Mar 15, 2024</p>
+            <p>
+              I'm thrilled to announce that I have joined Cognition AI as a [Position Title]. 
+              This new role is an exciting step in my career, and I look forward to contributing 
+              to the innovative work at Cognition AI. Stay tuned for updates on my journey!
+            </p>
+            {/* <p>
+              More details about the role and my experiences will be shared in a future post. 
+              For now, I am just soaking in the excitement of this new beginning.
+            </p> */}
+            <a
+              href="#"
+              className={"primaryLink text-decoration-none"}
+            >
+              Read More (Coming Soon)
+            </a>
+          </div>
+          <div className={"d-none d-xxl-block col-xxl-1"}></div>
+        </div>
+        {/* Existing article */}
+        <div className="row mx-0">
+          <div className={"d-none d-xxl-block col-xxl-1"}></div>
+          <div className="col-lg-6 col-xxl-4 pe-lg-4 my-auto">
+            <img
               src="https://images.bloggi.co/f517a5a3.png"
               alt="Article Image"
               className={"w-100 rounded-lg"}
