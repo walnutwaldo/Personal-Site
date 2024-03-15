@@ -23,7 +23,8 @@
   "scripts": {
     "build-sass": "sass src/index.scss src/css/index.css",
     "build-react": "react-scripts build",
-    "build": "npm-run-all -s build-sass build-react",
+    "postbuild": "cp src/images/cognitionai_logo.png build/images/cognitionai_logo.png",
+    "build": "npm-run-all -s build-sass build-react postbuild",
     "start-sass": "sass --watch src/index.scss:src/css/index.css",
     "start-react": "react-scripts start",
     "start": "npm-run-all -p start-sass start-react",

@@ -2,15 +2,18 @@ import React from "react";
 
 import WorkData from "../data/work";
 
-import { Row, Col, Image } from "react-bootstrap";
-import { socials } from "../tools/constants";
+import { Row, Col } from "react-bootstrap";
 
 function WorkCard(props) {
   const { work } = props;
   return (
     <div>
       <a href={work.linkUrl} target="_blank" rel="noreferrer">
-        <Image src={work.src} className="highlightedWorkImage"></Image>
+        {work.title === "Cognition AI" ? (
+          <img src={"/images/cognitionai_logo.png"} alt={work.title} className="highlightedWorkImage" />
+        ) : (
+          <img src={work.src} alt={work.title} className="highlightedWorkImage" />
+        )}
       </a>
       <div className="mt-3 px-4">
         <h5>
@@ -50,25 +53,6 @@ function FeaturedWorkSection(props) {
             </Col>
           );
         })}
-        {/* {numShown < WorkData.work.length ? (
-          <span
-            class={"showmorelesstext"}
-            onClick={() => {
-              setNumShown(WorkData.work.length);
-            }}
-          >
-            Show More
-          </span>
-        ) : numShown > 3 ? (
-          <span
-            className={"showmorelesstext"}
-            onClick={() => {
-              setNumShown(Math.min(3, WorkData.work.length));
-            }}
-          >
-            Show Less
-          </span>
-        ) : undefined} */}
       </Row>
     </section>
   );

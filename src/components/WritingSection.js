@@ -9,6 +9,7 @@ export default function WritingSection() {
           <span style={{ fontWeight: 300, opacity: 0.7 }}>(Not so)</span> Recent
           Writing
         </h3>
+        {/* Existing article */}
         <div className="row mx-0">
           <div className={"d-none d-xxl-block col-xxl-1"}></div>
           <div className="col-lg-6 col-xxl-4 pe-lg-4 my-auto">
