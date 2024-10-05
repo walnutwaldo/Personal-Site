@@ -1,19 +1,21 @@
 import React from "react";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
+import { Container, Row, Col, Button, Image } from "react-bootstrap";
 import {
   FeaturedWorkSection,
-  // SkillsSection,
   SocialProofSection,
 } from "./components";
 import { ChevronDown } from "feather-icons-react";
 import getStorageUrl from "./tools/firebase";
 import CustomNavbar from "./components/CustomNavbar";
-import { socials } from "./tools/constants";
-import { contactEmail, contactTwitter } from "./tools/utils";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
 import WritingSection from "./components/WritingSection";
+import LandingPage from "./components/LandingPage";
+import MinimalistSite from "./components/MinimalistSite";
 import { SocialIcon } from "react-social-icons";
+import { socials } from "./tools/constants";
+import { contactTwitter } from "./tools/utils";
 
 const useSquareSplash = window.innerWidth / window.innerHeight < 1;
 
@@ -30,9 +32,6 @@ function ctaSection1(urls) {
   return (
     <Row className="cta1 my-5">
       <Col className="d-flex flex-column text-center">
-        {/* <h5>
-          <strong>Want to work together?</strong>
-        </h5> */}
         <div className="my-2">
           <Button
             className="align-right cta-button m-1"
@@ -40,10 +39,6 @@ function ctaSection1(urls) {
           >
             Send a DM
           </Button>
-          {/*<Button variant="outline-primary" className="align-left cta-button m-1"*/}
-          {/*        onClick={() => window.open(urls['resume'], "_blank")}>*/}
-          {/*    Download Resume*/}
-          {/*</Button>*/}
         </div>
         <div className="mt-2">
           {socials
@@ -65,26 +60,6 @@ function ctaSection1(urls) {
                 </a>
               );
             })}
-        </div>
-      </Col>
-    </Row>
-  );
-}
-
-function ctaSection2() {
-  return (
-    <Row className="cta1 mt-5 mb-5">
-      <Col className="d-flex flex-column text-center">
-        <h5>
-          <strong>Interested in learning more?</strong>
-        </h5>
-        <div>
-          <Button
-            className="align-right cta-button me-1"
-            onClick={contactEmail}
-          >
-            Contact Me
-          </Button>
         </div>
       </Col>
     </Row>
@@ -192,9 +167,6 @@ class App extends React.Component {
 
   scrollContainerClass(exitedSplash, scrollPosition) {
     return "";
-    // return exitedSplash // && scrollPosition > window.innerHeight
-    // ? ""
-    // : "snap-y-mandatory";
   }
 
   render() {
@@ -202,31 +174,38 @@ class App extends React.Component {
       this.state;
 
     return (
-      <div
-        id="scrollContainer"
-        className={this.scrollContainerClass(exitedSplash, scrollPosition)}
-        onScroll={this.listenToScroll.bind(this)}
-      >
-        <SplashSection scrollPosition={scrollPosition} urls={urls} />
-        <div className="scrollStart" />
-        <CustomNavbar exitedSplash={exitedSplash} />
-        <div id="mainBody">
-          <Container>
-            <HeroSection
-              heroLineIdx={heroLineIdx}
-              fadeoutHero={fadeoutHero}
-              urls={urls}
-            />
-            <SocialProofSection className={"d-block d-xxl-none mx-auto"} />
-            {ctaSection1(urls)}
-            <FeaturedWorkSection />
-            <WritingSection />
-            {/* <SkillsSection /> */}
-            {/* {ctaSection2()} */}
-          </Container>
-        </div>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/original"
+          element={
+            <div
+              id="scrollContainer"
+              className={this.scrollContainerClass(exitedSplash, scrollPosition)}
+              onScroll={this.listenToScroll.bind(this)}
+            >
+              <SplashSection scrollPosition={scrollPosition} urls={urls} />
+              <div className="scrollStart" />
+              <CustomNavbar exitedSplash={exitedSplash} />
+              <div id="mainBody">
+                <Container>
+                  <HeroSection
+                    heroLineIdx={heroLineIdx}
+                    fadeoutHero={fadeoutHero}
+                    urls={urls}
+                  />
+                  <SocialProofSection className={"d-block d-xxl-none mx-auto"} />
+                  {ctaSection1(urls)}
+                  <FeaturedWorkSection />
+                  <WritingSection />
+                </Container>
+              </div>
+              <Footer />
+            </div>
+          }
+        />
+        <Route path="/minimalist" element={<MinimalistSite />} />
+      </Routes>
     );
   }
 }
