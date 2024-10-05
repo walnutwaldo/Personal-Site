@@ -1,4 +1,4 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { socials } from "../tools/constants";
 import React from "react";
 import { SocialIcon } from "react-social-icons";

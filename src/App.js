@@ -1,20 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Button, Col, Container, Image, Row } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import {
   FeaturedWorkSection,
-  // SkillsSection,
   SocialProofSection,
 } from "./components";
-import { ChevronDown } from "feather-icons-react";
 import getStorageUrl from "./tools/firebase";
 import CustomNavbar from "./components/CustomNavbar";
-import { socials } from "./tools/constants";
-import { contactEmail, contactTwitter } from "./tools/utils";
 import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
 import WritingSection from "./components/WritingSection";
-import { SocialIcon } from "react-social-icons";
 import LandingPage from "./components/LandingPage";
 import MinimalistSite from "./components/MinimalistSite";
 
