@@ -1,9 +1,6 @@
 import React from "react";
-
 import WorkData from "../data/work";
-
 import { Row, Col, Image } from "react-bootstrap";
-import { socials } from "../tools/constants";
 
 function WorkCard(props) {
   const { work } = props;
@@ -34,10 +31,8 @@ function WorkCard(props) {
   );
 }
 
-function FeaturedWorkSection(props) {
-  const [numShown, setNumShown] = React.useState(
-    Math.min(3, WorkData.work.length)
-  );
+function FeaturedWorkSection() {
+  const numShown = Math.min(3, WorkData.work.length);
 
   return (
     <section name="work" id="work" className="pt-md-1">

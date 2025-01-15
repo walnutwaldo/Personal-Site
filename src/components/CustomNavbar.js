@@ -1,6 +1,6 @@
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import React from "react";
-import { contactEmail, contactTwitter } from "../tools/utils";
+import { contactEmail } from "../tools/utils";
 import { socials } from "../tools/constants";
 
 const navItems = [

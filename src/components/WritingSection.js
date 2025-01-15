@@ -14,7 +14,7 @@ export default function WritingSection() {
           <div className="col-lg-6 col-xxl-4 pe-lg-4 my-auto">
             <img
               src="https://images.bloggi.co/f517a5a3.png"
-              alt="Article Image"
+              alt=""
               className={"w-100 rounded-lg"}
             />
           </div>
