@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import {
   FeaturedWorkSection,
@@ -14,6 +15,8 @@ import HeroSection from "./components/HeroSection";
 import Footer from "./components/Footer";
 import WritingSection from "./components/WritingSection";
 import { SocialIcon } from "react-social-icons";
+import LandingPage from "./components/LandingPage";
+import MinimalistSite from "./components/MinimalistSite";
 
 const useSquareSplash = window.innerWidth / window.innerHeight < 1;
 
@@ -202,31 +205,40 @@ class App extends React.Component {
       this.state;
 
     return (
-      <div
-        id="scrollContainer"
-        className={this.scrollContainerClass(exitedSplash, scrollPosition)}
-        onScroll={this.listenToScroll.bind(this)}
-      >
-        <SplashSection scrollPosition={scrollPosition} urls={urls} />
-        <div className="scrollStart" />
-        <CustomNavbar exitedSplash={exitedSplash} />
-        <div id="mainBody">
-          <Container>
-            <HeroSection
-              heroLineIdx={heroLineIdx}
-              fadeoutHero={fadeoutHero}
-              urls={urls}
-            />
-            <SocialProofSection className={"d-block d-xxl-none mx-auto"} />
-            {ctaSection1(urls)}
-            <FeaturedWorkSection />
-            <WritingSection />
-            {/* <SkillsSection /> */}
-            {/* {ctaSection2()} */}
-          </Container>
-        </div>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/original"
+          element={
+            <div
+              id="scrollContainer"
+              className={this.scrollContainerClass(exitedSplash, scrollPosition)}
+              onScroll={this.listenToScroll.bind(this)}
+            >
+              <SplashSection scrollPosition={scrollPosition} urls={urls} />
+              <div className="scrollStart" />
+              <CustomNavbar exitedSplash={exitedSplash} />
+              <div id="mainBody">
+                <Container>
+                  <HeroSection
+                    heroLineIdx={heroLineIdx}
+                    fadeoutHero={fadeoutHero}
+                    urls={urls}
+                  />
+                  <SocialProofSection className={"d-block d-xxl-none mx-auto"} />
+                  {ctaSection1(urls)}
+                  <FeaturedWorkSection />
+                  <WritingSection />
+                  {/* <SkillsSection /> */}
+                  {/* {ctaSection2()} */}
+                </Container>
+              </div>
+              <Footer />
+            </div>
+          }
+        />
+        <Route path="/minimalist" element={<MinimalistSite />} />
+      </Routes>
     );
   }
 }
