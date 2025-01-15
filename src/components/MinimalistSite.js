@@ -3,6 +3,7 @@ import React from 'react';
 const MinimalistSite = () => {
   const containerStyle = {
     padding: '20px',
+    paddingBottom: '150px',
     maxWidth: '100%',
     margin: '0 auto',
     fontFamily: 'Arial, sans-serif',
