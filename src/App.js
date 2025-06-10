@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 import WritingSection from "./components/WritingSection";
 import LandingPage from "./components/LandingPage";
 import MinimalistSite from "./components/MinimalistSite";
+import ModernSite from "./components/ModernSite";
 import { SocialIcon } from "react-social-icons";
 import { socials } from "./tools/constants";
 import { contactTwitter } from "./tools/utils";
@@ -205,6 +206,7 @@ class App extends React.Component {
           }
         />
         <Route path="/minimalist" element={<MinimalistSite />} />
+        <Route path="/modern" element={<ModernSite />} />
       </Routes>
     );
   }

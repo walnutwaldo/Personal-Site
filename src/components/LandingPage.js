@@ -41,6 +41,11 @@ const LandingPage = () => {
             [site 2] The clout hype-wave page that took a few minutes to make
           </Link>
         </li>
+        <li style={listItemStyle}>
+          <Link to="/modern" style={linkStyle}>
+            [site 3] Modern portfolio inspired by the best designs
+          </Link>
+        </li>
       </ul>
     </div>
   );
