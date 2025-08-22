@@ -17,8 +17,12 @@ import { SocialIcon } from "react-social-icons";
 import { socials } from "./tools/constants";
 import { contactTwitter } from "./tools/utils";
 
+// Determine if we should use square splash image based on screen aspect ratio
+// This helps optimize the splash image for mobile vs desktop viewing
 const useSquareSplash = window.innerWidth / window.innerHeight < 1;
 
+// Define all static asset paths used throughout the application
+// Using template literals to dynamically select square vs regular splash images
 const paths = {
   splashImage: `Photos/Splash${useSquareSplash ? "Square" : ""}.png`,
   splashImageLowRes: `Photos/Splash${
@@ -28,6 +32,7 @@ const paths = {
   resume: "Yan Walden Resume.pdf",
 };
 
+// Call-to-Action section component for user engagement
 function ctaSection1(urls) {
   return (
     <Row className="cta1 my-5">
