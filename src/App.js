@@ -28,7 +28,7 @@ const paths = {
   resume: "Yan Walden Resume.pdf",
 };
 
-function ctaSection1(urls) {
+function ctaSection1() {
   return (
     <Row className="cta1 my-5">
       <Col className="d-flex flex-column text-center">
@@ -43,11 +43,11 @@ function ctaSection1(urls) {
         <div className="mt-2">
           {socials
             .filter((item) => item.image !== undefined)
-            .map((item, i) => {
+            .map((item) => {
               return (
                 <a
                   href={item.url}
-                  key={i}
+                  key={item.name}
                   target="_blank"
                   rel="noreferrer"
                   className="mx-1 socialLogo"
@@ -148,7 +148,6 @@ class App extends React.Component {
   }
 
   listenToScroll(event) {
-    console.log("scroll event");
     const target = event.target;
     const scroll = target.scrollTop;
 
@@ -195,7 +194,7 @@ class App extends React.Component {
                     urls={urls}
                   />
                   <SocialProofSection className={"d-block d-xxl-none mx-auto"} />
-                  {ctaSection1(urls)}
+                  {ctaSection1()}
                   <FeaturedWorkSection />
                   <WritingSection />
                 </Container>

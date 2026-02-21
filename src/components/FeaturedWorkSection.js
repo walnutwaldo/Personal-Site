@@ -7,7 +7,7 @@ function WorkCard(props) {
   return (
     <div>
       <a href={work.linkUrl} target="_blank" rel="noreferrer">
-        <Image src={work.src} className="highlightedWorkImage"></Image>
+        <Image src={work.src} alt={work.title} className="highlightedWorkImage" />
       </a>
       <div className="mt-3 px-4">
         <h5>
@@ -38,9 +38,9 @@ function FeaturedWorkSection() {
     <section name="work" id="work" className="pt-md-1">
       <Row className="mt-5 my-md-5 text-center">
         <h3 className="text-center mb-5">Highlighted Work</h3>
-        {WorkData.work.slice(0, numShown).map((work, i) => {
+        {WorkData.work.slice(0, numShown).map((work) => {
           return (
-            <Col className="text-center mb-4 col-12 col-lg-4" key={i}>
+            <Col className="text-center mb-4 col-12 col-lg-4" key={work.title}>
               <WorkCard work={work} />
             </Col>
           );

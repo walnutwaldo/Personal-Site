@@ -23,7 +23,7 @@ class SkillsSection extends React.Component {
             urls[skill.title] = url;
           })
           .catch((err) => {
-            console.log("Failed to load storage path " + skill.imagePath);
+            console.error("Failed to load storage path " + skill.imagePath, err);
           })
       );
     }
@@ -44,14 +44,18 @@ class SkillsSection extends React.Component {
             <>
               <h2 className="notableWork">Notable Work</h2>
               <ListGroup variant="flush">
-                {skill.notableWork.map((work, j) => {
-                  return <ListGroup.Item key={j}>{work}</ListGroup.Item>;
+                {skill.notableWork.map((work) => {
+                  return (
+                    <ListGroup.Item key={`${skill.title}-${work}`}>
+                      {work}
+                    </ListGroup.Item>
+                  );
                 })}
               </ListGroup>
             </>
           );
           return (
-            <Row className="skill mt-5" key={i}>
+            <Row className="skill mt-5" key={skill.title}>
               <Col
                 className={
                   "col-12 col-md-5 col-lg-6 d-flex flex-column order-2 order-md-1 mx-2 mx-md-0" +
