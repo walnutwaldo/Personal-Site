@@ -3,11 +3,11 @@
     {
       "title": "Engineering",
       "imagePath": "Photos/MIT Dome.png",
-      "description": "I wrote my first line of code at 12. I went on to study computer science theory and competed in international programming competitions. I love exploring different stacks, from research to founding a startup. I have recently been exploring formal verification methods and smart contract engineering.",
+      "description": "I wrote my first line of code at 12. I went on to study computer science theory and competed in international programming competitions. I love exploring different stacks, from research to founding startups. Currently building the future of AI-powered software development at Cognition.",
       "notableWork": [
+        "Co-Founder & CPO @ Cognition AI (Devin)",
         "IOI Gold Medalist (Team USA)",
-        "MIT PRIMES researcher",
-        "Smart Contract Engineering @ Rift Finance"
+        "MIT PRIMES researcher"
       ]
     },
     {
@@ -15,8 +15,8 @@
       "imagePath": "Photos/PRIMESConferencePresentation.png",
       "description": "I recognized early that to really build impactful tech, you need impactful teams. I pride myself in being able to evaluate talent, inspire exceptional engineers, and work together on ambitious timelines.",
       "notableWork": [
-        "Leading engineering & design @ GameFi",
-        "Reforming high school student government",
+        "Co-founding and scaling Cognition AI",
+        "Leading engineering & design @ previous startups",
         "Managing team and solo research projects @ MIT"
       ]
     },
@@ -25,9 +25,9 @@
       "imagePath": "Photos/GameFiWhiteSteps.JPG",
       "description": "From trading and bot-building in high school to eventually planning the growth of my own companies, I've loved identifying opportunities for growth. Sometimes this is financial, but other times it is about growing communities or growing products.",
       "notableWork": [
-        "Founding and fundraising @ GameFi",
-        "Product @ Rift Finance",
-        "North American finalist of Wharton’s KWHS Investment Competition"
+        "Co-Founder & CPO @ Cognition AI",
+        "Founding and fundraising multiple startups",
+        "North American finalist of Wharton's KWHS Investment Competition"
       ]
     }
   ]

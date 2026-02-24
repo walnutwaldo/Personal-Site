@@ -1,7 +1,7 @@
 export function contactTwitter() {
   window
     .open(
-      "https://twitter.com/messages/compose?recipient_id=1326996467450404864",
+      "https://x.com/messages/compose?recipient_id=1326996467450404864",
       "_blank"
     )
     .focus();

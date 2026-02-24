@@ -1,6 +1,13 @@
 {
   "work": [
     {
+      "src": "https://cognition.ai/favicon.ico",
+      "title": "Cognition AI",
+      "description": "Co-Founder & CPO. Building Devin, the AI software engineer, and the future of software development.",
+      "linkText": "Company Site",
+      "linkUrl": "https://cognition.ai/"
+    },
+    {
       "src": "/images/mitprimes_thumbnail.png",
       "title": "MIT PRIMES Research",
       "description": "Conducted research in cryptography and machine learning.",

@@ -15,7 +15,7 @@ export const socials = [
   },
   {
     name: "Twitter",
-    url: "https://twitter.com/walden_yan",
+    url: "https://x.com/walden_yan",
     image: "/icons/twitter.svg",
   },
   {
@@ -27,9 +27,9 @@ export const socials = [
 
 export const heroText = (
   <p>
-    {/* Hey! I'm <b>Walden</b>. I spend my time building cool products and tools */}
-    {/* with modern technology. I also love working with teams of other ambitious */}
-    {/* people to tackle modern problems. */}
+    Co-Founder &amp; CPO at <a href="https://cognition.ai/">Cognition AI</a>
+    <br />
+    <br />
     1. Using software to advance humanity
     <br />
     2. Working with exceptional people

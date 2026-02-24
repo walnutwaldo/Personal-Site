@@ -34,7 +34,7 @@ const MinimalistSite = () => {
     <div style={containerStyle}>
       <div style={contentStyle}>
         <h1 style={headingStyle}>Walden Yan</h1>
-        <p>Software engineer, entrepreneur, and technology enthusiast.</p>
+        <p>Co-Founder & CPO at <a href="https://cognition.ai/" style={linkStyle}>Cognition AI</a>, building Devin and the future of software engineering.</p>
 
         <h2>What drives me</h2>
         <ul style={listStyle}>
@@ -45,7 +45,8 @@ const MinimalistSite = () => {
         <h2>Highlighted Work</h2>
         <ul style={listStyle}>
           <li>
-            <strong>Cognition.ai</strong> - Cofounder. Makers of Devin, an AI software engineer.
+            <strong>Cognition AI</strong> - Co-Founder & CPO. Building Devin, the AI software engineer, and the future of software development.
+            {" "}<a href="https://cognition.ai/" style={linkStyle}>Company Site</a>
           </li>
           <li>
             <strong>DeepReason</strong> - Founder &amp; CEO. Advanced formal tooling for smart contract auditing.
@@ -75,7 +76,7 @@ const MinimalistSite = () => {
         <ul style={listStyle}>
           <li><a href="https://www.linkedin.com/in/waldenyan" style={linkStyle}>LinkedIn</a></li>
           <li><a href="https://github.com/walnutwaldo" style={linkStyle}>GitHub</a></li>
-          <li><a href="https://twitter.com/walden_yan" style={linkStyle}>Twitter</a></li>
+          <li><a href="https://x.com/walden_yan" style={linkStyle}>X (Twitter)</a></li>
           <li><a href="https://waldensthoughts.bloggi.co/" style={linkStyle}>Writing</a></li>
         </ul>
       </div>
