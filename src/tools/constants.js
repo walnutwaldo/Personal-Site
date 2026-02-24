@@ -27,12 +27,10 @@ export const socials = [
 
 export const heroText = (
   <p>
-    {/* Hey! I'm <b>Walden</b>. I spend my time building cool products and tools */}
-    {/* with modern technology. I also love working with teams of other ambitious */}
-    {/* people to tackle modern problems. */}
-    1. Using software to advance humanity
+    I&apos;m Walden Yan. Founder and researcher focused on advancing AI.
     <br />
-    2. Working with exceptional people
+    IOI Gold 2020. Building products at the frontier of software and
+    intelligence.
   </p>
 );
 

@@ -1,25 +1,32 @@
 {
   "work": [
     {
+      "src": "https://logo.clearbit.com/cognition.ai",
+      "title": "Cognition",
+      "description": "Co-founder. Building Devin, an AI software engineer.",
+      "linkText": "Company Site",
+      "linkUrl": "https://cognition.ai/"
+    },
+    {
+      "src": "/images/deepreason_thumbnail.png",
+      "title": "DeepReason",
+      "description": "Founder & CEO. Built formal tooling for smart contract auditing.",
+      "linkText": "Company Site",
+      "linkUrl": "https://deepreason.xyz/"
+    },
+    {
+      "src": "/images/ioi_thumbnail.png",
+      "title": "IOI Gold",
+      "description": "Won a gold medal at the International Olympiad in Informatics in 2020.",
+      "linkText": "Read More",
+      "linkUrl": "https://www.seas.harvard.edu/news/2020/10/coding-gold"
+    },
+    {
       "src": "/images/mitprimes_thumbnail.png",
       "title": "MIT PRIMES Research",
       "description": "Conducted research in cryptography and machine learning.",
       "linkText": "Read Cryptography Paper",
       "linkUrl": "https://firebasestorage.googleapis.com/v0/b/walden-yan-personal-site.appspot.com/o/SyFER.pdf?alt=media&token=81acaedc-d869-4a8e-a776-55ad39634bbf"
-    },
-    {
-      "src": "/images/ioi_thumbnail.png",
-      "title": "IOI Gold",
-      "description": "Won a gold medal at the International Olympiad in Informatics for the USA",
-      "linkText": "Read More",
-      "linkUrl": "https://www.seas.harvard.edu/news/2020/10/coding-gold"
-    },
-    {
-      "src": "/images/deepreason_thumbnail.png",
-      "title": "DeepReason",
-      "description": "Founder & CEO. Advanced formal tooling for smart contract auditing.",
-      "linkText": "Company Site",
-      "linkUrl": "https://deepreason.xyz/"
     },
     {
       "src": "/images/rift_thumbnail.png",
