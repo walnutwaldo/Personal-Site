@@ -17,6 +17,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-import { missingHelper } from "./tools/definitelyMissingModule";
-console.log(missingHelper);
