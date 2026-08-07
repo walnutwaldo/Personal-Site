@@ -32,9 +32,9 @@ export default function CustomNavbar(props) {
           <strong>Walden Yan</strong>
         </Navbar.Brand>
         <Nav className="me-auto d-none d-lg-flex">
-          {socials.map((item, i) => {
+          {socials.map((item) => {
             return (
-              <Nav.Item key={i}>
+              <Nav.Item key={item.name}>
                 <Nav.Link href={item.url} target="_blank" rel="noreferrer">
                   {item.name}
                 </Nav.Link>
@@ -49,9 +49,9 @@ export default function CustomNavbar(props) {
         </Navbar.Toggle>
         <Navbar.Collapse className="justify-content-end">
           <Nav className="text-center">
-            {navItems.map((navItem, i) => {
+            {navItems.map((navItem) => {
               return (
-                <Nav.Link key={i} href={navItem.href}>
+                <Nav.Link key={navItem.href} href={navItem.href}>
                   {navItem.text}
                 </Nav.Link>
               );

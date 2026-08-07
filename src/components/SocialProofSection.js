@@ -78,13 +78,18 @@ class SocialProofSection extends React.Component {
           {socialProofs.map(function (socialProof, i) {
             return (
               <div
+                key={socialProof.name}
                 className={
                   "socialProofLogo " + (i === currIdx ? " highlighted" : "")
                 }
                 onMouseOver={() => setIdx(i)}
                 onMouseOut={() => setIdx(-1)}
               >
-                <Image className={"d-block "} src={urls[socialProof.name]} />
+                <Image
+                  className={"d-block "}
+                  src={urls[socialProof.name]}
+                  alt={`${socialProof.name} logo`}
+                />
               </div>
             );
           })}

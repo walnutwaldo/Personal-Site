@@ -20,11 +20,11 @@ export default function Footer() {
           <Col className="col-12 my-2 col-md-4 my-md-0">
             {socials
               .filter((item) => item.image !== undefined)
-              .map((item, i) => {
+              .map((item) => {
                 return (
                   <a
                     href={item.url}
-                    key={i}
+                    key={item.name}
                     target="_blank"
                     rel="noreferrer"
                     className="mx-1 socialLogo darkTheme"
