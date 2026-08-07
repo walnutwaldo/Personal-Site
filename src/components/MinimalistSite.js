@@ -34,21 +34,21 @@ const MinimalistSite = () => {
     <div style={containerStyle}>
       <div style={contentStyle}>
         <h1 style={headingStyle}>Walden Yan</h1>
-        <p>Software engineer, entrepreneur, and technology enthusiast.</p>
+        <p>Founder and researcher focused on advancing AI. IOI Gold 2020.</p>
 
         <h2>What drives me</h2>
         <ul style={listStyle}>
-          <li>Using software to advance humanity</li>
+          <li>Advancing AI with software</li>
           <li>Working with exceptional people</li>
         </ul>
 
         <h2>Highlighted Work</h2>
         <ul style={listStyle}>
           <li>
-            <strong>Cognition.ai</strong> - Cofounder. Makers of Devin, an AI software engineer.
+            <strong>Cognition</strong> - Co-founder. Building Devin, an AI software engineer.
           </li>
           <li>
-            <strong>DeepReason</strong> - Founder &amp; CEO. Advanced formal tooling for smart contract auditing.
+            <strong>DeepReason</strong> - Founder &amp; CEO. Built formal tooling for smart contract auditing.
             {" "}<a href="https://deepreason.xyz/" style={linkStyle}>Company Site</a>
           </li>
           <li>
@@ -58,7 +58,7 @@ const MinimalistSite = () => {
             </a>
           </li>
           <li>
-            <strong>IOI Gold</strong> - Achieved gold medal in the International Olympiad in Informatics.
+            <strong>IOI Gold</strong> - Won gold at the International Olympiad in Informatics in 2020.
           </li>
         </ul>
 

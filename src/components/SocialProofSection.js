@@ -8,13 +8,13 @@ const socialProofs = [
     name: "Harvard",
     path: "Social Proof/Harvard.png",
     description:
-      "Attending undegrad at Harvard College. Class of 2024. Studying CS and Economics.",
+      "Studied computer science and economics at Harvard College.",
   },
   {
     name: "MIT",
     path: "Social Proof/MIT.png",
     description:
-      "Conducted CS research with MIT PRIMES in cryptography and machine learning/NLP.",
+      "Conducted research with MIT PRIMES in cryptography and machine learning.",
   },
   {
     name: "Wharton",
