@@ -1,10 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Container, Row, Col, Button, Image } from "react-bootstrap";
-import {
-  FeaturedWorkSection,
-  SocialProofSection,
-} from "./components";
+import { FeaturedWorkSection, SocialProofSection } from "./components";
 import { ChevronDown } from "feather-icons-react";
 import getStorageUrl from "./tools/firebase";
 import CustomNavbar from "./components/CustomNavbar";
@@ -13,6 +10,8 @@ import Footer from "./components/Footer";
 import WritingSection from "./components/WritingSection";
 import LandingPage from "./components/LandingPage";
 import MinimalistSite from "./components/MinimalistSite";
+import WorkPage from "./components/WorkPage";
+import NotFound from "./components/NotFound";
 import { SocialIcon } from "react-social-icons";
 import { socials } from "./tools/constants";
 import { contactTwitter } from "./tools/utils";
@@ -181,7 +180,10 @@ class App extends React.Component {
           element={
             <div
               id="scrollContainer"
-              className={this.scrollContainerClass(exitedSplash, scrollPosition)}
+              className={this.scrollContainerClass(
+                exitedSplash,
+                scrollPosition
+              )}
               onScroll={this.listenToScroll.bind(this)}
             >
               <SplashSection scrollPosition={scrollPosition} urls={urls} />
@@ -194,7 +196,9 @@ class App extends React.Component {
                     fadeoutHero={fadeoutHero}
                     urls={urls}
                   />
-                  <SocialProofSection className={"d-block d-xxl-none mx-auto"} />
+                  <SocialProofSection
+                    className={"d-block d-xxl-none mx-auto"}
+                  />
                   {ctaSection1(urls)}
                   <FeaturedWorkSection />
                   <WritingSection />
@@ -205,6 +209,8 @@ class App extends React.Component {
           }
         />
         <Route path="/minimalist" element={<MinimalistSite />} />
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     );
   }
