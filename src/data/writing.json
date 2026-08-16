@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "title": "On Technology, Inequality, Purpose, and the Fermi Paradox",
+      "date": "Nov 15, 2022",
+      "image": "https://images.bloggi.co/f517a5a3.png",
+      "excerpt": "... This AI would be able to strategize any business' resource allocation, make many copies of itself to run different parts of the organization, iterate over many different product and service ideas, and organize the logistics to make this all happen. Consider every job that really needs a person in today's world. A programmer? Not when robots learn to code. A factory manager? Not when robots learn to design and organize themselves. A farmer? Not when robots finally figure out how to run a farm on their own. Our touchpoint into all of these areas of production will be governed by these software AGIs (Artificial General Intelligence), and the entire world will become a software API. Scaling farm production could be as easy as scaling a cluster of Kubernetes is today ...",
+      "url": "https://waldensthoughts.bloggi.co/on-technology-inequality-purpose-and-the-fermi-paradox"
+    }
+  ]
+}
